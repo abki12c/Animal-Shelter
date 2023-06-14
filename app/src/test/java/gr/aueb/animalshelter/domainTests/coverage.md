@@ -1,0 +1,3 @@
+# DOMAIN LOGIC COVERAGE REPORT
+
+![COVERAGE REPORT Ακολουθίας](coverage.png)

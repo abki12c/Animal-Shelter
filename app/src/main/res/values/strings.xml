@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Animal Shelter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="ok">OK</string>
+    <string name="go">Go</string>
+    <string name="logout">Logout</string>
+    <string name="contact">Contact Info</string>
+    <string name="back">Back</string>
+    <string name="settings">Settings</string>
+    <string name="adopt">Adopt a friend</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="selectType">Type</string>
+    <string name="selectBreed">Breed</string>
+    <string name="starter">Get Started</string>
+    <string name="adoption_form">Adoption Form</string>
+    <string name="name">Enter your First Name:</string>
+    <string name="lastname">Enter your Last Name:</string>
+    <string name="email">Enter your Email:</string>
+    <string name="number">Enter your Phone Number:</string>
+    <string name="adress">Enter your Adress:</string>
+    <string name="comments">Please tell us why you want to adopt this pet:</string>
+    <string name="nameInput">e.g. Mark</string>
+    <string name="lastnameInput">e.g. Smith</string>
+    <string name="emailInput">e.g. MarkSmith@gmail.com</string>
+    <string name="numberInput">e.g. +69032346789</string>
+    <string name="streetInput">e.g. St. Avenue</string>
+    <string name="streetnumberInput">e.g. 122</string>
+    <string name="townInput">e.g. Athens</string>
+    <string name="tkInput">TK: e.g. 12346</string>
+    <string name="submitButton">Submit</string>
+    <string name="animalType">Type:</string>
+    <string name="animalBreed">Breed:</string>
+    <string name="animalAge">Age:</string>
+    <string name="animalGender">Gender:</string>
+    <string name="animalChipped">Chipped:</string>
+    <string name="animalDescription">Description:</string>
+    <string name="contInf">Contact Info:</string>
+    <string name="contInf2">Phone number: 210 8294529</string>
+    <string name="contInf3">Address: Solomou 57,Athens</string>
+    <string name="contInf4">Email: shelter@gmail.com</string>
+    <string name="random">Feeling lucky? Click the button below to get a random animal that might just be your new best friend!</string>
+</resources>

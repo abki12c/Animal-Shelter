@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>671</x>
+      <y>583</y>
+      <w>418</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>Adoption
+-
+- adoptionTime: LocalDateTime
+-
++ getAdoptionTime(): LocalDateTime {query}
++ setAdoptionRequest() : AdoptionRequest {query}
++ setAdoptionRequest(adoptionRequest: AdoptionRequest)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1111</x>
+      <y>561</y>
+      <w>429</w>
+      <h>451</h>
+    </coordinates>
+    <panel_attributes>Animal
+-
+- name: String
+- type: String
+- breed: String
+- age: Integer
+- chipped: Boolean
+- description: String
+- gender: String
+-
++ setName(name: String) 
++ getName() : String {query}
++ setType(type: String)
++ getType() : String {query}
++ setBreed(breed: String)
++ getBreed() : String {query}
++ setAge(age: Integer)
++ getAge() : Integer{query}
++ getChipped(): Boolean {query}
++ setChipped(Boolean chipped)
++ setGender(gender: String)
++ getGender(): String {query}
++ getDescription(): String {query}
++ setDescription(description : String)
++ getFeedingSchedule(): FeedingSchedule {query}
++ setFeedingSchedule(feedingSchedule : FeedingSchedule)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1694</x>
+      <y>1210</y>
+      <w>385</w>
+      <h>429</h>
+    </coordinates>
+    <panel_attributes>Obligation
+-
+- id: Integer
+- description: String
+- assignmentTime: LocalDateTime
+- completionTime: LocalDateTime
+- fulfilled: Boolean
+- fulfillmentDetails: String
+_- lastObligationID: Integer = 0_
+-
++ getID() : Integer {query}
++ getDescription(): String {query}
++ setDescription(description : String)
++ setAnimal(a : Animal)
++ setAssignmentTime(assignmentTime: LocalDateTime)
++ getAssignmentTime() : LocalDateTime {query}
++ setCompletionTime(completionTime: LocalDateTime)
++ getCompletionTime() : LocalDateTime {query}
++ getFulfilled(): Boolean {query}
++ setFulfilled()
++ getfulfillmentDetails(): String {query}
++ setFulfillmentDetails(fulfillmentDetails : String)
++ getEmployeeID(): Integer {query}
+_+ NextObligationID()_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>66</x>
+      <y>132</y>
+      <w>264</w>
+      <h>187</h>
+    </coordinates>
+    <panel_attributes>Address
+-
+- street: String
+- streetNumber: Integer
+- town: String
+- zipCode: Integer
+-
++ setStreet(street: String)
++ setStreetNumber(number: Integer)
++ setTown(town: String)
++ setZipCode(zipCode: Integer)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1628</x>
+      <y>594</y>
+      <w>528</w>
+      <h>495</h>
+    </coordinates>
+    <panel_attributes>Employee
+-
+- name: String
+- surname: String
+- obligationsNumber: Integer
+- speciality: Speciality
+-
++ getAccount(): Account {query}
++ setName(name: String)
++ getName() : String {query}
++ setSurname(surname: String)
++ getSurname() : String {query}
++ getObligationsNumber() Integer {query}
++ setObligationsNmuber(obligationsNumber : Integer)
++ setSpeciality(speciality: Speciality)
++ getSpeciality() : Speciality{query}
++ createEmployee(username : String, password : String, name : String,
+   surname : String, specialty : Specialty) 
++ deleteEmployee(employee : Employee) 
++ getAnimals() : List&lt;Animal&gt; {query}
++ getEmployees() :  List&lt;Employee&gt; {query}
++ setObligation(animal : Animal , employee : Employee,
+  description : String , assignmentTime : LocalDateTime)
++ statistics(filter: String, type : String): String
++ addFeedingSchedule(type: String , breed : String , 
+   food : String , drink : String , foodAmount : String 
+   , hours: String)
++ getAdRequests(animal: Animal) : List&lt;AdoptionRequest&gt; {query}
++ getAdRequests(): ArrayList&lt;AdoptionRequest&gt; {query}
++ approveAdRequest(adoptionRequest : AdoptionRequest, yes: boolean)
++ turnDownAdRequests(animal: Animal)
++ addAnimal(animal : Animal)
++ getObligations() : List&lt;Obligation&gt; {query}
++ getObligation(obid: Integer): Obligation {query}
++ checkOff(obligation : Obligation, fullfillmentDetails : String, completionTime : LocalDateTime )
++ getFeedingSchedules(breed: String): ArrayList&lt;FeedingSchedule&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1166</x>
+      <y>1001</y>
+      <w>550</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0;480.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1122</x>
+      <y>0</y>
+      <w>275</w>
+      <h>363</h>
+    </coordinates>
+    <panel_attributes>FeedingSchedule
+-
+- type: String
+- breed: String
+- food: String
+- drink: String
+- foodAmount: String
+- hours: String
+-
++ setType(type: String)
++ getType() : String {query}
++ setBreed(breed: String)
++ getBreed() : String {query}
++ setFood(food: String)
++ getFood() : String {query}
++ setDrink(drink: String)
++ getDrink() : String {query}
++ setFoodAmount(foodAmount: String)
++ getFoodAmount() : String{query}
++ setHours(hours: String)
++ getHours() : String {query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1221</x>
+      <y>352</y>
+      <w>44</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>429</y>
+      <w>638</w>
+      <h>385</h>
+    </coordinates>
+    <panel_attributes>Adopter
+-
+- name: String
+- surname: String
+- email: String
+- phoneNumber: Integer
+-
++ setName(name: String)
++ setEmail(email: String)
++ setSurname(surname: String)
++ setPhoneNumber(phoneNumber: Integer)
++ setEmail(email: String)
++ setPhoneNumber(phoneNumber: String)
++ getName() : String {query}
++ getSurname() : String {query}
++ getEmail(): String {query}
++ getPhoneNumber() : Integer {query}
++ getAddress(): Address{query}
++ setAddress(address : Address)
++ getAnimalTypes() : ArrayList&lt;String&gt;{query}
++ getAnimalsBy(filter: String, input: String,animals: ArrayList&lt;Animal&gt; ) : ArrayList&lt;Animal&gt;
++ createAddRequest(animal: Animal, comments : String) : AdoptionRequest
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>121</x>
+      <y>308</y>
+      <w>44</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>165</x>
+      <y>913</y>
+      <w>341</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>AdoptionRequest
+-
+- comments: String
+-
++ getAnimal(): Animal {query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>803</y>
+      <w>44</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1705</x>
+      <y>275</y>
+      <w>264</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>Account
+-
+- username: String
+- password: String
+- accountID: Integer
+_- lastAccountID: Integer = 0_
+-
++ setUsername(username: String) 
++ getUsername() : String {query}
++ setPassword(password: String) 
++ getPassword() : String {query}
++ getAccountID() : Integer{query}
+_+ NextAccountID()_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1826</x>
+      <y>484</y>
+      <w>44</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>495</x>
+      <y>737</y>
+      <w>352</w>
+      <h>297</h>
+    </coordinates>
+    <panel_attributes>m1=0...1
+m2=1</panel_attributes>
+    <additional_attributes>270.0;10.0;270.0;240.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1837</x>
+      <y>1078</y>
+      <w>44</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>495</x>
+      <y>1001</y>
+      <w>682</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;40.0;590.0;40.0;590.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>726</x>
+      <y>198</y>
+      <w>264</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Speciality
+-
+cleaning
+medical care
+vet
+bureaucratic tasks
+nutrisionist</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

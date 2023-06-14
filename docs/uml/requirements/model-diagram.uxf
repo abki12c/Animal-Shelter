@@ -1,0 +1,66 @@
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><element><id>UMLClass</id><coordinates><x>517</x><y>539</y><w>264</w><h>165</h></coordinates><panel_attributes>Υιοθεσία
+-
+χρόνος υιοθεσίας: LocalDateTime</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1001</x><y>528</y><w>297</w><h>176</h></coordinates><panel_attributes>Ζώο
+-
+όνομα: String
+είδος: String
+ράτσα: String
+ηλικία: Integer
+τσιπαρισμένο: Boolean
+περιγραφή: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1496</x><y>1056</y><w>319</w><h>165</h></coordinates><panel_attributes>Υποχρέωση
+-
+id: Integer
+περιγραφή: String
+στιγμή πραγματοποίησης: LocalDateTime
+στιμή ολοκλήρωσης: LocalDateTime
+ολοκληρωμένη: Boolean
+λεπτομέρειες ολοκλήρωσης: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>99</y><w>165</w><h>165</h></coordinates><panel_attributes>Διεύθυνση
+-
+οδός: String
+αριθμός: Integer
+πόλη: String
+ΤΚ: Integer
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1507</x><y>561</y><w>264</w><h>165</h></coordinates><panel_attributes>Υπαλληλος
+-
+όνομα: String
+επώνυμο: String
+/αριθμός υποχρεώσεων: Integer
+ειδικότητα: Ειδικότητα</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1056</x><y>693</y><w>462</w><h>462</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;10;10;390;400;390</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1012</x><y>99</y><w>264</w><h>165</h></coordinates><panel_attributes>Πρόγραμμα Σίτησης
+-
+είδος: Είδος
+ράτσα: String
+τροφή: String
+πόσιμο: String
+ποσότητα τροφής: Integer
+ώρες: List&lt;LocalDate&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1111</x><y>253</y><w>44</w><h>297</h></coordinates><panel_attributes>m1=*
+m2=1</panel_attributes><additional_attributes>10;250;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>44</x><y>550</y><w>264</w><h>165</h></coordinates><panel_attributes>Ανάδοχος
+-
+όνομα: String
+επώνυμο: String
+email: String
+τηλέφωνο: Integer
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>165</x><y>253</y><w>44</w><h>319</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;270;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>22</x><y>869</y><w>264</w><h>165</h></coordinates><panel_attributes>Αίτημα Υιοθεσίας
+-
+εγκριμένη: Boolen
+σχόλια: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>154</x><y>704</y><w>44</w><h>187</h></coordinates><panel_attributes>m1=1
+m2=*</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1507</x><y>319</y><w>264</w><h>110</h></coordinates><panel_attributes>Λογαριασμός
+-
+username: String
+password: String
+account id: Integer</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1628</x><y>418</y><w>44</w><h>165</h></coordinates><panel_attributes>m1=1
+m2=1</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>275</x><y>693</y><w>374</w><h>297</h></coordinates><panel_attributes>m1=0...1
+m2=1</panel_attributes><additional_attributes>300;10;300;240;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>1639</x><y>715</y><w>44</w><h>363</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;10;10;310</additional_attributes></element><element><id>Relation</id><coordinates><x>275</x><y>693</y><w>792</w><h>352</h></coordinates><panel_attributes>m1=*
+m2=1</panel_attributes><additional_attributes>10;290;690;290;690;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>517</x><y>154</y><w>264</w><h>165</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Ειδικότητα
+-
+καθαρισμός
+ιατρική περίθαλψη
+κτηνίατρος
+γραφειοκρατικές εργασίες
+φροντιστής διατροφής
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

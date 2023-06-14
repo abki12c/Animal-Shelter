@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AnimalShelter"
+        tools:targetApi="31">
+        <activity android:name=".View.Animals.ManageAnimals.ManageAnimalsActivity"></activity>
+        <activity android:name=".View.Obligations.ManageObligations.ManageObligationsActivity"></activity>
+        <activity android:name=".View.Statistics.StatisticsAdopted.StatisticsAdoptedActivity"></activity>
+        <activity android:name=".View.Statistics.StatisticsBreeds.StatisticsBreedsActivity"></activity>
+        <activity android:name=".View.Statistics.StatisticsTypes.StatisticsTypesActivity"></activity>
+        <activity android:name=".View.Subordinate.SubordinateHomePage.SubordinateHomePageActivity"></activity>
+        <activity android:name=".View.Subordinate.SubordinateSettings.SubordinateSettingsActivity"></activity>
+        <activity android:name=".View.Subordinate.SubordinateSettings.ContactInfo.ContactInfoActivity"></activity>
+        <activity android:name=".View.Statistics.ManageStatistics.ManageStatisticsActivity"></activity>
+        <activity android:name=".View.Animals.AddEditAnimals.AddEditAnimalsActivity"></activity>
+        <activity android:name=".View.LoginPage.LoginPageActivity"></activity>
+        <activity android:name=".View.Employer.Home.EmployerHomePageActivity"></activity>
+        <activity android:name=".View.LoginPage.EmployeeLogin.EmployeeLoginActivity"></activity>
+        <activity android:name=".View.Adopter.AdopterSettings.ContactInfo.ContactInfoActivity"></activity>
+        <activity android:name=".View.Animals.ShowAnimals.SearchAnimalsActivity"></activity>
+        <activity android:name=".View.Animals.AnimalDetails.AnimalDetailsActivity"></activity>
+        <activity android:name=".View.Adopter.AdopterHome.AdopterHomeActivity"></activity>
+        <activity android:name=".View.Adopter.AdopterSettings.ManageProfileActivity"></activity>
+        <activity android:name=".View.Adoption_Request.AddAdoptionRequest.AddAdoptionRequestActivity"></activity>
+        <activity android:name=".View.Adoption_Request.AddAdoptionRequest.AdoptionRequestInfo.AdoptionRequestInfoActivity"></activity>
+        <activity
+            android:name=".View.WelcomePage.WelcomePageActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
