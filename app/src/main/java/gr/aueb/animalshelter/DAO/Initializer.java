@@ -249,8 +249,8 @@ import gr.aueb.animalshelter.domain.Specialty;
         int month = LocalDateTime.now().getMonthValue();
         int day = LocalDateTime.now().getDayOfMonth();
         Obligation obligation1 = new Obligation(animals.get(0),subordinates.get(0),"Feed Bully and give him water", LocalDateTime.of(LocalDate.of(year,month,day+1), LocalTime.of(18,30)));
-        Obligation obligation2 = new Obligation(animals.get(1),subordinates.get(1),"Give  Cracker a bath",LocalDateTime.of(LocalDate.of(year,month,day), LocalTime.of(LocalTime.now().getHour()+2,0)));
-        Obligation obligation3 = new Obligation(animals.get(2),subordinates.get(2),"Do a checkup for the health of Buddy",LocalDateTime.of(LocalDate.now(),LocalTime.of(LocalTime.now().getHour()+1,30)));
+        Obligation obligation2 = new Obligation(animals.get(1),subordinates.get(1),"Give  Cracker a bath",LocalDateTime.of(LocalDate.of(year,month,day), LocalTime.of(LocalTime.now().getHour(),0)));
+        Obligation obligation3 = new Obligation(animals.get(2),subordinates.get(2),"Do a checkup for the health of Buddy",LocalDateTime.of(LocalDate.now(),LocalTime.of(LocalTime.now().getHour(),30)));
 
         // save data on DAO
         getObligationDao().save(obligation1);
