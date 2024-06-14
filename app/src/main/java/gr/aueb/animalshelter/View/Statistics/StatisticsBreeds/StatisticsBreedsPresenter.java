@@ -32,7 +32,7 @@ public class StatisticsBreedsPresenter {
      */
     void onLoadBarBreeds()
     {
-        List<String> animalsList =animals.getBreeds();
+        List<String> animalsList =animals.getTypes();
         view.loadBreeds(animalsList);
 
     }

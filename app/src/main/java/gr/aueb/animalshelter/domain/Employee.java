@@ -118,7 +118,7 @@ public class Employee {
                 break;
             case "animals-breed":
                 // HashMap with key=breed of the animal and value=the number of the animals with that breed
-                HashMap<String, Double> breeds = new HashMap<String, Double>();
+                HashMap<String, Double> breeds = new HashMap<>();
                 for(Animal animal : animals){
                 	if(animal.getType().equals(animalType)) {
                 		if(breeds.containsKey(animal.getBreed())){
@@ -131,7 +131,8 @@ public class Employee {
                 }
                 statistics = "--Statistics for "+animalType.toUpperCase()+" Breeds--\n";
                 for( Map.Entry<String, Double> animalsBreed: breeds.entrySet()){
-                    statistics += animalsBreed.getKey()+": "+ animalsBreed.getValue()*100.0/numberOfBreeds+"%"+"\n";
+                    double percentage = animalsBreed.getValue()*100.0/numberOfBreeds;
+                    statistics += animalsBreed.getKey()+": "+ String.format("%.2f",percentage) +"%"+"\n";
                 }
                 break;
             case "animals-adopted":
