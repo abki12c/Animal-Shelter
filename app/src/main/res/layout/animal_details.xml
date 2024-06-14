@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".View.Animals.ShowAnimals.SearchAnimalsActivity"
 >
 
@@ -20,7 +20,7 @@
         android:id="@+id/age"
         android:layout_width="60dp"
         android:layout_height="21dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toEndOf="@+id/animalAge"
         app:layout_constraintTop_toBottomOf="@+id/breed" />
@@ -29,7 +29,7 @@
         android:id="@+id/animalAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/animalAge"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,8 +39,8 @@
         android:id="@+id/animalBreed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
         android:text="@string/animalBreed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/animalType" />
@@ -49,7 +49,7 @@
         android:id="@+id/animalType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="24dp"
         android:text="@string/animalType"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
         android:id="@+id/type"
         android:layout_width="54dp"
         android:layout_height="22dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/animalType"
         app:layout_constraintTop_toBottomOf="@+id/animalName" />
@@ -68,8 +68,8 @@
         android:id="@+id/chipped"
         android:layout_width="48dp"
         android:layout_height="19dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/animalChipped"
         app:layout_constraintTop_toBottomOf="@+id/gender" />
 
@@ -77,7 +77,7 @@
         android:id="@+id/animalChipped"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/animalChipped"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +87,7 @@
         android:id="@+id/animalDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/animalDescription"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,18 +98,22 @@
         android:layout_width="59dp"
         android:layout_height="19dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/animalBreed"
         app:layout_constraintTop_toBottomOf="@+id/type" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="41dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="14dp"
-        app:layout_constraintStart_toEndOf="@+id/animalDescription"
-        app:layout_constraintTop_toBottomOf="@+id/chipped" />
+        android:layout_width="299dp"
+        android:layout_height="99dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animalDescription"
+        app:layout_constraintVertical_bias="0.113" />
 
     <TextView
         android:id="@+id/gender"
@@ -124,7 +128,7 @@
         android:id="@+id/animalGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="@string/animalGender"
         app:layout_constraintStart_toStartOf="parent"

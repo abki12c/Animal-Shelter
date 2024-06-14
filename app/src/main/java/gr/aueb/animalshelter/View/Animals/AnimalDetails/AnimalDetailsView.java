@@ -2,10 +2,6 @@ package gr.aueb.animalshelter.View.Animals.AnimalDetails;
 
 public interface AnimalDetailsView {
 
-
-
-
-
     /**
      * Setters
      */
@@ -17,6 +13,7 @@ public interface AnimalDetailsView {
     void setGender(String gender);
     void setChipped(String chipped);
     void setDescription(String description);
+    void setImage(String image);
 
     void setAnimalId(int i);
 

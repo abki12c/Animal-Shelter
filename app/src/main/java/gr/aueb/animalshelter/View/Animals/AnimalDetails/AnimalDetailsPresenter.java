@@ -33,6 +33,7 @@ public class AnimalDetailsPresenter {
         view.setGender(attachedAnimal.getGender());
         view.setChipped((attachedAnimal.getChipped()) ? "yes" : "no");
         view.setDescription(attachedAnimal.getDescription());
+        view.setImage(attachedAnimal.getImageName());
     }
 
 

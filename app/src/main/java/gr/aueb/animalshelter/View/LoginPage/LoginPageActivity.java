@@ -29,7 +29,7 @@ public class LoginPageActivity extends AppCompatActivity {
 
         if(!initialized)
         {
-            new MemoryInitializer().prepareData();
+            new MemoryInitializer(getApplicationContext()).prepareData();
             initialized = true;
         }
     }

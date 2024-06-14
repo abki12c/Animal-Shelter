@@ -18,6 +18,7 @@ public class Animal  {
 	private String description;
 	private String gender;
 	private FeedingSchedule feedingSchedule;
+	private String imageName;
 	private static int lastAnimalId = 0;
 
 	public Animal(){
@@ -42,6 +43,18 @@ public class Animal  {
 		this.id = NextAnimalId();
 	}
 
+	public Animal(String name, String type, String breed, int age, boolean chipped, String description, String gender, FeedingSchedule feedingSchedule, String imageName) {
+		this.id = NextAnimalId();
+		this.name = name;
+		this.type = type;
+		this.breed = breed;
+		this.age = age;
+		this.chipped = chipped;
+		this.description = description;
+		this.gender = gender;
+		this.feedingSchedule = feedingSchedule;
+		this.imageName = imageName;
+	}
 
 	public static int NextAnimalId(){
 		return ++lastAnimalId;
@@ -80,7 +93,13 @@ public class Animal  {
 		return this.age;
 	}
 
+	public String getImageName() {
+		return imageName;
+	}
 
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
+	}
 
 	public String getGender(){
 		return this.gender;

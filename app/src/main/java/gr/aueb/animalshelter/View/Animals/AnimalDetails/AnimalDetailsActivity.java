@@ -1,6 +1,8 @@
 package gr.aueb.animalshelter.View.Animals.AnimalDetails;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 import gr.aueb.animalshelter.MemoryDAO.AnimalDAOMemory;
 import gr.aueb.animalshelter.R;
@@ -25,6 +30,7 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
 
     final AnimalDetailsPresenter presenter = new AnimalDetailsPresenter(this,new AnimalDAOMemory());;
     BottomNavigationView bottomNavigationView;
+    ImageView imageView;
     private String name,type,breed,age,gender,chipped,description;
     Button back;
     int animalId;
@@ -40,13 +46,10 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
         presenter.onLoadAnimal(animalId);
 
 
-        ImageView imageView = findViewById(R.id.animalPic);
-        imageView.setImageResource(R.drawable.ic_pets_foreground);
-        bottomNavigationView
-                = findViewById(R.id.bottomNavigationView);
+        imageView = findViewById(R.id.animalPic);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        bottomNavigationView
-                .setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
 
 
@@ -145,6 +148,23 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
     public void setDescription(String description) {
         this.description=description;
         ((TextView)findViewById(R.id.description)).setText(description);
+    }
+
+    @Override
+    public void setImage(String image) {
+
+        Bitmap bitmap = null;
+        try {
+            FileInputStream fis = openFileInput(image );
+            bitmap = BitmapFactory.decodeStream(fis);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if (bitmap != null) {
+            imageView.setImageBitmap(bitmap);
+        }
+
     }
 
     @Override

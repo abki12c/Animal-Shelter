@@ -1,5 +1,10 @@
 package gr.aueb.animalshelter.DAO;
 
+import android.content.Context;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -27,6 +32,8 @@ import gr.aueb.animalshelter.domain.Specialty;
     /** Deletes all Data from memory
     */
     protected abstract void eraseData();
+
+    protected abstract Context getContext();
 
 
     /** Initializes the memory with data
@@ -89,9 +96,11 @@ import gr.aueb.animalshelter.domain.Specialty;
      * @return the list of animals added to be used in another function
      */
     public List<Animal> addAnimals(List<FeedingSchedule> feedingSchedules){
-        Animal dog = new Animal("Bully","dog","bulldog",5,true,"Bully is the sleeper in our shelter. He does nothing but sleep and eat food.","male",feedingSchedules.get(0));
-        Animal cat = new Animal("Cracker","cat","sphynx",3,true,"Cracker is very energetic. She likes eating food and scaring our customers","female",feedingSchedules.get(1));
-        Animal bird = new Animal("Buddy","bird","cockatoo",3,true,"Buddy is very playful. He likes palying with our toys and eating snucks from the hands of our visitors","male", feedingSchedules.get(2));
+        Animal dog = new Animal("Bully","dog","bulldog",5,true,"Bully is the sleeper in our shelter. He does nothing but sleep and eat food.","male",feedingSchedules.get(0),"bully");
+        Animal cat = new Animal("Cracker","cat","sphynx",3,true,"Cracker is very energetic. She likes eating food and scaring our customers","female",feedingSchedules.get(1),"cracker");
+        Animal bird = new Animal("Buddy","bird","cockatoo",3,true,"Buddy is very playful. He likes palying with our toys and eating snucks from the hands of our visitors","male", feedingSchedules.get(2),"buddy");
+        Animal prairie_dog = new Animal("Poppy","prairie dog","Utah prairie dog",2,false,"Poppy likes snuggles and yahoos!!","female",feedingSchedules.get(3),"poppy");
+
 
         // save data on DAO
         getAnimalDao().save(dog);
@@ -103,9 +112,56 @@ import gr.aueb.animalshelter.domain.Specialty;
         animals.add(dog);
         animals.add(cat);
         animals.add(bird);
+        animals.add(prairie_dog);
+
+        saveAnimalImagesToInternalStorage(animals);
 
         return animals;
 
+    }
+
+    public void saveAnimalImagesToInternalStorage(List<Animal> animals) {
+        Context context = getContext();
+        for (Animal animal : animals) {
+            int resourceId = context.getResources().getIdentifier(animal.getImageName(), "raw", context.getPackageName());
+            if (resourceId != 0) {
+                saveImageFromRawToInternal(context, resourceId, animal.getImageName() + ".jpg");
+            }
+        }
+    }
+
+    private void saveImageFromRawToInternal(Context context, int resourceId, String outputFileName) {
+        InputStream inputStream = null;
+        FileOutputStream outputStream = null;
+
+        try {
+            inputStream = context.getResources().openRawResource(resourceId);
+            outputStream = context.openFileOutput(outputFileName, Context.MODE_PRIVATE);
+
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (outputStream != null) {
+                try {
+                    outputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     /** Initializes the {@link FeedingScheduleDao}
@@ -115,6 +171,7 @@ import gr.aueb.animalshelter.domain.Specialty;
         FeedingSchedule feedingScheduleDog = new FeedingSchedule("basic feeding schedule for dog","dog","bulldog","dry dog food", "water", "250g","10:00, 15:00, 21:00");
         FeedingSchedule feedingScheduleCat = new FeedingSchedule("basic feeding schedule for cat","cat","sphynx","dry cat food", "water", "100g","9:00, 14:30, 21:00");
         FeedingSchedule feedingScheduleBird = new FeedingSchedule("basic feeding schedule for bird","bird","cockatoo","pellets", "water", "50g","9:30, 13:30, 20:00");
+        FeedingSchedule feedingSchedulePrairieDog = new FeedingSchedule("basic feeding schedule for prairie dog","prairie dog","Utah prairie dog","carrots","water","20g","9:30, 13:30, 20:00");
 
         // save data on DAO
         getFeedingScheduleDao().save(feedingScheduleDog);
@@ -127,6 +184,7 @@ import gr.aueb.animalshelter.domain.Specialty;
         feedingSchedules.add(feedingScheduleDog);
         feedingSchedules.add(feedingScheduleCat);
         feedingSchedules.add(feedingScheduleBird);
+        feedingSchedules.add(feedingSchedulePrairieDog);
 
         return feedingSchedules;
     }

@@ -1,5 +1,7 @@
 package gr.aueb.animalshelter.MemoryDAO;
 
+import android.content.Context;
+
 import java.util.List;
 
 import gr.aueb.animalshelter.DAO.AccountDao;
@@ -19,6 +21,11 @@ import gr.aueb.animalshelter.domain.Employee;
 import gr.aueb.animalshelter.domain.Obligation;
 
 public class MemoryInitializer extends Initializer {
+
+    private Context context;
+    public MemoryInitializer(Context context){
+        this.context = context;
+    }
 
     @Override
     protected void eraseData() {
@@ -92,4 +99,7 @@ public class MemoryInitializer extends Initializer {
     protected AccountDao getAccountDao(){
         return new AccountDaoMemory();}
 
+    public Context getContext() {
+        return context;
+    }
 }

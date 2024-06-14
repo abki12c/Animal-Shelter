@@ -23,7 +23,7 @@ public class WelcomePageActivity extends AppCompatActivity {
         wbtn = (Button) findViewById(R.id.welcomeBtn);
         if(!initialized)
         {
-            new MemoryInitializer().prepareData();
+            new MemoryInitializer(getApplicationContext()).prepareData();
             initialized = true;
         }
     }
