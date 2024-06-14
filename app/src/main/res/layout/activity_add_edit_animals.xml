@@ -12,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scrollbars="vertical"
         tools:context=".View.Animals.AddEditAnimals.AddEditAnimalsActivity">
 
 
@@ -178,18 +179,37 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="enter some details" />
 
-        <EditText
-            android:id="@+id/editGender"
-            android:layout_width="213dp"
-            android:layout_height="49dp"
-            android:layout_marginTop="508dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Male or Female"
+        <RadioGroup
+            android:id="@+id/gender_group"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="@+id/editDescription"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editDescription"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="508dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:layout_marginHorizontal="20dp"
+                android:text="Male"
+                android:id="@+id/male_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </RadioButton>
+
+            <RadioButton
+                android:layout_marginHorizontal="20sp"
+                android:text="Female"
+                android:id="@+id/female_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </RadioButton>
+        </RadioGroup>
+
+
 
         <EditText
             android:id="@+id/editAge"
@@ -218,19 +238,20 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="205dp"
             android:layout_height="63dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/editGender">
+            app:layout_constraintTop_toBottomOf="@+id/gender_group">
 
             <AutoCompleteTextView
                 android:id="@+id/autoCompleteTextViewSelectFeedingSchedule"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Select Feeding Schedule"
                 android:hint="Feeding Schedules"
                 android:inputType="none"
+                android:text="Select Feeding Schedule"
                 android:textSize="12sp" />
         </com.google.android.material.textfield.TextInputLayout>
 

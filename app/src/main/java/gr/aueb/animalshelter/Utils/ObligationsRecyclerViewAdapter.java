@@ -3,14 +3,10 @@ package gr.aueb.animalshelter.Utils;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
-
 import gr.aueb.animalshelter.R;
-import gr.aueb.animalshelter.View.Subordinate.SubordinateSettings.ContactInfo.ContactInfoView;
 
 public class ObligationsRecyclerViewAdapter extends RecyclerView.Adapter<ObligationsListViewHolder> {
 

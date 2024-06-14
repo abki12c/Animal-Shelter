@@ -26,7 +26,7 @@
     <string name="numberInput">e.g. +69032346789</string>
     <string name="streetInput">e.g. St. Avenue</string>
     <string name="streetnumberInput">e.g. 122</string>
-    <string name="townInput">e.g. Athens</string>
+    <string name="townInput">Town: e.g. LA</string>
     <string name="tkInput">TK: e.g. 12346</string>
     <string name="submitButton">Submit</string>
     <string name="animalType">Type:</string>

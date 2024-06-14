@@ -100,7 +100,7 @@ public class AddEditAnimalsActivity extends AppCompatActivity implements AddEdit
 
     @Override
     public String getGender() {
-        return ((EditText)findViewById(R.id.editGender)).getText().toString().trim();
+        return null;
     }
 
 
@@ -137,7 +137,7 @@ public class AddEditAnimalsActivity extends AppCompatActivity implements AddEdit
 
     @Override
     public void setGender(String gender) {
-        ((EditText)findViewById(R.id.editGender)).setText(gender);
+
     }
 
     @Override

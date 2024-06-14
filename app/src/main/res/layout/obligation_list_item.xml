@@ -31,12 +31,5 @@
         android:textColor="@color/black"
         tools:text="Description"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@id/imageview"
-        android:layout_marginTop="10dp"
-        android:background="#DAD8D8"/>
-
 
 </RelativeLayout>

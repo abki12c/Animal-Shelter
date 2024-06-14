@@ -10,7 +10,7 @@ public class FeedingScheduleDAOMemory implements FeedingScheduleDao {
 
     protected static ArrayList<FeedingSchedule> entities = new ArrayList<FeedingSchedule>();
     public List<FeedingSchedule> findAll(){
-        return new ArrayList<FeedingSchedule>(entities);
+        return new ArrayList<>(entities);
     }
 
     public List<String> findAllNamesPlusID(){

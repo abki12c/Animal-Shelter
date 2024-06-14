@@ -42,6 +42,7 @@ public class ManageObligationsActivity extends AppCompatActivity implements Mana
 
 
         recyclerView.setAdapter(new ObligationsRecyclerViewAdapter(getApplicationContext(),obligationItemList));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
         final ManageObligationsPresenter presenter = new ManageObligationsPresenter(this);
@@ -76,7 +77,7 @@ public class ManageObligationsActivity extends AppCompatActivity implements Mana
 
     List<ObligationItem> createObligationItemList(){
         int accountId = SubordinateHomePageActivity.accountID;
-        List<Obligation> obligationList = new ObligationDaoMemory().findUnfulfilledObligations(accountId);
+        List<Obligation> obligationList = new ObligationDaoMemory().findAll();
         List<ObligationItem> obligationItems = new ArrayList<ObligationItem>();
 
         for(Obligation obligation : obligationList){

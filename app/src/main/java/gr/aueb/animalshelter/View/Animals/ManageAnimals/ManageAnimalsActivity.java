@@ -3,13 +3,16 @@ package gr.aueb.animalshelter.View.Animals.ManageAnimals;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import gr.aueb.animalshelter.R;
+import gr.aueb.animalshelter.View.Animals.AddEditAnimals.AddEditAnimalsActivity;
 import gr.aueb.animalshelter.View.Obligations.ManageObligations.ManageObligationsActivity;
 import gr.aueb.animalshelter.View.Statistics.ManageStatistics.ManageStatisticsActivity;
 import gr.aueb.animalshelter.View.Subordinate.SubordinateHomePage.SubordinateHomePageActivity;
@@ -18,6 +21,7 @@ import gr.aueb.animalshelter.View.Subordinate.SubordinateSettings.SubordinateSet
 
 public class ManageAnimalsActivity extends AppCompatActivity implements ManageAnimalsView {
     BottomNavigationView bottomNavigationView;
+    FloatingActionButton actionBtn;
     ManageAnimalsPresenter presenter;
 
     @Override
@@ -29,6 +33,21 @@ public class ManageAnimalsActivity extends AppCompatActivity implements ManageAn
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView_subordinate);
         bottomNavigationView.setSelectedItemId(R.id.Animals);
+        actionBtn = findViewById(R.id.floatingActionButton5);
+
+
+        actionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AddEditAnimalsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

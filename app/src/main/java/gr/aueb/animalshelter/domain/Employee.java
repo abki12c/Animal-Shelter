@@ -112,7 +112,8 @@ public class Employee {
                 double numberOfAnimals = animals.size();
                 statistics = "--Statistics for Animal Types--\n";
                 for(Map.Entry<String, Double> animalsType: types.entrySet()){
-                   statistics += animalsType.getKey()+": "+((animalsType.getValue()*100.0)/numberOfAnimals)+"%"+"\n";
+                    double percentage = (animalsType.getValue()*100.0)/numberOfAnimals;
+                   statistics += animalsType.getKey()+": "+ String.format("%.2f",percentage) +"%"+"\n";
                 }
                 break;
             case "animals-breed":

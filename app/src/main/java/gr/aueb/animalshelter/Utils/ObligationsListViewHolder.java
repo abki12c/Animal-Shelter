@@ -16,7 +16,7 @@ public class ObligationsListViewHolder extends RecyclerView.ViewHolder {
 
     public ObligationsListViewHolder(@NonNull View itemView) {
         super(itemView);
-        imageView = itemView.findViewById(R.id.imageView    );
+        imageView = itemView.findViewById(R.id.imageView);
         nameView = itemView.findViewById(R.id.name);
         descriptionView = itemView.findViewById(R.id.description);
     }

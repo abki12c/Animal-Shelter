@@ -44,7 +44,7 @@ import gr.aueb.animalshelter.domain.Specialty;
         addAdoptions(adopters);
         List<Account> accounts = addAccounts();
         List<Employee> subordinates = addEmployees(accounts);
-    //    addObligations(subordinates, animals);
+        addObligations(subordinates, animals);
 
     }
 
