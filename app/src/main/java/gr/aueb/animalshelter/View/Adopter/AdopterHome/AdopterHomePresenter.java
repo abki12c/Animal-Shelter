@@ -31,7 +31,7 @@ public class AdopterHomePresenter {
         Animal lucky = animals.find(animalId);
         String age = lucky.getAge()+"";
         String chipped = lucky.getChipped() ? "yes" : "no";
-        view.showAnimal(lucky.getName(), lucky.getType(),lucky.getBreed(),age, lucky.getGender(),chipped, lucky.getDescription());
+        view.showAnimal(lucky.getName(), lucky.getType(),lucky.getBreed(),age, lucky.getGender(),chipped, lucky.getDescription(),lucky.getImageName());
     }
     /**
      * produces random number for

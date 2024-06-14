@@ -43,39 +43,16 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
         setContentView(R.layout.activity_animal_details);
         this.animalId = getIntent().getIntExtra("animal",0);
 
+        imageView = findViewById(R.id.animalPic);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
         presenter.onLoadAnimal(animalId);
 
 
-        imageView = findViewById(R.id.animalPic);
-        bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
-
-
-
-        back = findViewById(R.id.back_button);
-
 
 
     }
-    /**
-     * listens to button to move to previous page
-     */
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-
-            }
-        });
-    }
-
-
-
 
 
 
@@ -155,7 +132,7 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
 
         Bitmap bitmap = null;
         try {
-            FileInputStream fis = openFileInput(image );
+            FileInputStream fis = openFileInput(image);
             bitmap = BitmapFactory.decodeStream(fis);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -6,7 +6,7 @@ public interface AdopterHomeView {
      * chosen by the presenter
      * from animals in animalDao
      */
-    void showAnimal(String name,String type,String breed,String age,String gender,String chipped,String description);
+    void showAnimal(String name,String type,String breed,String age,String gender,String chipped,String description,String imageName);
     /**
      * When user clicks on Add Request button from the Home Page
      * it loads the AddAdoptionRequestActivity if not in activity already

@@ -1,6 +1,8 @@
 package gr.aueb.animalshelter.Utils;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -91,7 +95,7 @@ public class MyAdapter extends BaseAdapter
                 convertView = inflater.inflate(R.layout.animal_item_brief, null);
             }
             ImageView imageView = convertView.findViewById(R.id.item_image);
-            imageView.setImageResource(R.drawable.ic_pets_foreground);
+            setImage(imageView,attachedAnimal);
 
             ((TextView) convertView.findViewById(R.id.item_name)).setText(attachedAnimal.getName());
 
@@ -108,7 +112,7 @@ public class MyAdapter extends BaseAdapter
                 convertView = inflater.inflate(R.layout.animal_details, null);
             }
             ImageView imageView = convertView.findViewById(R.id.animalPic);
-            imageView.setImageResource(R.drawable.ic_pets_foreground);
+            setImage(imageView,attachedAnimal);
 
 
             ((TextView) convertView.findViewById(R.id.animalName)).setText(attachedAnimal.getName());
@@ -125,6 +129,20 @@ public class MyAdapter extends BaseAdapter
         return convertView;
 
 
+    }
+
+    public void setImage(ImageView imageView, Animal attachedAnimal){
+        Bitmap bitmap = null;
+        try {
+            FileInputStream fis = context.openFileInput(attachedAnimal.getImageName());
+            bitmap = BitmapFactory.decodeStream(fis);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if (bitmap != null) {
+            imageView.setImageBitmap(bitmap);
+        }
     }
 
     /**

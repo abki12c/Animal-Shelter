@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gr.aueb.animalshelter.domain.*;
-import gr.aueb.animalshelter.SharedData;
 
 class EmployeeTest { 
 /*

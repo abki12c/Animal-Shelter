@@ -96,16 +96,17 @@ import gr.aueb.animalshelter.domain.Specialty;
      * @return the list of animals added to be used in another function
      */
     public List<Animal> addAnimals(List<FeedingSchedule> feedingSchedules){
-        Animal dog = new Animal("Bully","dog","bulldog",5,true,"Bully is the sleeper in our shelter. He does nothing but sleep and eat food.","male",feedingSchedules.get(0),"bully");
-        Animal cat = new Animal("Cracker","cat","sphynx",3,true,"Cracker is very energetic. She likes eating food and scaring our customers","female",feedingSchedules.get(1),"cracker");
-        Animal bird = new Animal("Buddy","bird","cockatoo",3,true,"Buddy is very playful. He likes palying with our toys and eating snucks from the hands of our visitors","male", feedingSchedules.get(2),"buddy");
-        Animal prairie_dog = new Animal("Poppy","prairie dog","Utah prairie dog",2,false,"Poppy likes snuggles and yahoos!!","female",feedingSchedules.get(3),"poppy");
+        Animal dog = new Animal("Bully","dog","bulldog",5,true,"Bully is the sleeper in our shelter. He does nothing but sleep and eat food.","male",feedingSchedules.get(0),"bully.jpg");
+        Animal cat = new Animal("Cracker","cat","sphynx",3,true,"Cracker is very energetic. She likes eating food and scaring our customers","female",feedingSchedules.get(1),"cracker.jpg");
+        Animal bird = new Animal("Buddy","bird","cockatoo",3,true,"Buddy is very playful. He likes palying with our toys and eating snacks from the hands of our visitors","male", feedingSchedules.get(2),"buddy.jpg");
+        Animal prairie_dog = new Animal("Poppy","prairie dog","Utah prairie dog",2,false,"Poppy likes snuggles and yahoos!!","female",feedingSchedules.get(3),"poppy.jpg");
 
 
         // save data on DAO
         getAnimalDao().save(dog);
         getAnimalDao().save(cat);
         getAnimalDao().save(bird);
+        getAnimalDao().save(prairie_dog);
 
         // create and return a list that includes the animals
         List<Animal> animals = new ArrayList<>();
@@ -125,7 +126,7 @@ import gr.aueb.animalshelter.domain.Specialty;
         for (Animal animal : animals) {
             int resourceId = context.getResources().getIdentifier(animal.getImageName(), "raw", context.getPackageName());
             if (resourceId != 0) {
-                saveImageFromRawToInternal(context, resourceId, animal.getImageName() + ".jpg");
+                saveImageFromRawToInternal(context, resourceId, animal.getImageName());
             }
         }
     }
@@ -197,8 +198,8 @@ import gr.aueb.animalshelter.domain.Specialty;
         FeedingSchedule feedingScheduleDog = new FeedingSchedule("basic feeding schedule for husky","dog","husky","dry dog food", "water", "250g","10:00, 15:00, 21:00");
         FeedingSchedule feedingScheduleCat = new FeedingSchedule("basic feeding schedule for bobtail","cat","American Bobtail","dry cat food", "water", "100g","9:00, 14:30, 21:00");
         Animal dog = new Animal("Billy","dog","husky",4,true,"Husky likes pets from our visitors an likes to play with his toys..He doesn't share!!","male",feedingScheduleDog);
-        Animal cat = new Animal("Nancy","cat","American Bobtail",3,true,"Nancy is not really friendy but with time she can become very loving","female",feedingScheduleCat);
-        AdoptionRequest adoptionRequestDog = new AdoptionRequest(adopters.get(0),dog,"My dream is to apopt a Husky...Plz make it come true!!!!");
+        Animal cat = new Animal("Nancy","cat","American Bobtail",3,true,"Nancy is not really friendly but with time she can become very loving","female",feedingScheduleCat);
+        AdoptionRequest adoptionRequestDog = new AdoptionRequest(adopters.get(0),dog,"My dream is to adopt a Husky...Plz make it come true!!!!");
         AdoptionRequest adoptionRequestCat = new AdoptionRequest(adopters.get(1),cat,"I like cats with no tails...Give me!!!!");
 
         Adoption adoption1 = new Adoption(adoptionRequestDog);

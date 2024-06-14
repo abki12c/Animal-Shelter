@@ -2,6 +2,8 @@ package gr.aueb.animalshelter.View.Adopter.AdopterHome;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -15,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import gr.aueb.animalshelter.MemoryDAO.AnimalDAOMemory;
@@ -48,11 +52,9 @@ public class AdopterHomeActivity extends AppCompatActivity implements AdopterHom
 
         go = findViewById(R.id.buttonRandom);
 
-        bottomNavigationView
-                = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        bottomNavigationView
-                .setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.home);
 
     }
@@ -79,13 +81,23 @@ public class AdopterHomeActivity extends AppCompatActivity implements AdopterHom
      * from animals in animalDao
      */
 
-
-    public void showAnimal(String name,String type,String breed,String age,String gender,String chipped,String description) {
+    @Override
+    public void showAnimal(String name,String type,String breed,String age,String gender,String chipped,String description,String imageName) {
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.animal_details, null);
 
         ImageView imageView = findViewById(R.id.animalPic);
-        imageView.setImageResource(R.drawable.ic_pets_foreground);
+        Bitmap bitmap = null;
+        try {
+            FileInputStream fis = getApplicationContext().openFileInput(imageName);
+            bitmap = BitmapFactory.decodeStream(fis);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if (bitmap != null) {
+            imageView.setImageBitmap(bitmap);
+        }
 
 
         ((TextView) findViewById(R.id.animalName)).setText(name);

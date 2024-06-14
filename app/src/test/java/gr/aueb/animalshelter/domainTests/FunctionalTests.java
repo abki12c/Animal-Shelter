@@ -13,7 +13,6 @@ import java.util.List;
 
 import gr.aueb.animalshelter.DAO.Initializer;
 import gr.aueb.animalshelter.MemoryDAO.MemoryInitializer;
-import gr.aueb.animalshelter.SharedData;
 import gr.aueb.animalshelter.domain.Account;
 import gr.aueb.animalshelter.domain.Address;
 import gr.aueb.animalshelter.domain.Adopter;

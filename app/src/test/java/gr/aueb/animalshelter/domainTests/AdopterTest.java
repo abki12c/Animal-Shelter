@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import gr.aueb.animalshelter.SharedData;
+
 import gr.aueb.animalshelter.domain.Adopter;
 import gr.aueb.animalshelter.domain.AdoptionRequest;
 import gr.aueb.animalshelter.domain.Animal;
