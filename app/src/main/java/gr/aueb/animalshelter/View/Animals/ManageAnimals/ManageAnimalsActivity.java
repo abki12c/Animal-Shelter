@@ -40,11 +40,6 @@ public class ManageAnimalsActivity extends AppCompatActivity implements ManageAn
             }
         });
 
-
-
-
-
-
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

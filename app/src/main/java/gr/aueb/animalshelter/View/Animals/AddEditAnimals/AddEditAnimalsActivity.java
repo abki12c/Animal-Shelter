@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import androidx.appcompat.app.AlertDialog;
@@ -24,6 +25,7 @@ public class AddEditAnimalsActivity extends AppCompatActivity implements AddEdit
     ArrayList<String> feedingSchedules =new ArrayList<>() ;
     private ArrayAdapter<String> adapterFeedingSchedules=null;
     private AutoCompleteTextView autoCompleteTextViewFeedingSchedules;
+    private Button submitBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +39,13 @@ public class AddEditAnimalsActivity extends AppCompatActivity implements AddEdit
         //search bar feeding schedules
         presenter.onLoadBarFeedingSchedules();
         autoCompleteTextViewFeedingSchedules=findViewById(R.id.autoCompleteTextViewSelectFeedingSchedule);
-        adapterFeedingSchedules=new ArrayAdapter<String>(this,R.layout.type_item,feedingSchedules);
+        adapterFeedingSchedules=new ArrayAdapter<>(this,R.layout.type_item,feedingSchedules);
         autoCompleteTextViewFeedingSchedules.setAdapter(adapterFeedingSchedules);
 
+        submitBtn = findViewById(R.id.submit_button);
+
         // listener for submit button
-        findViewById(R.id.submit_button).setOnClickListener(new View.OnClickListener() {
+        submitBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
                 presenter.onSaveAnimal();
@@ -52,11 +56,8 @@ public class AddEditAnimalsActivity extends AppCompatActivity implements AddEdit
 
     @Override
     public void loadFeedingSchedules(List<String> input) {
-
         feedingSchedules.clear();
         feedingSchedules.addAll(input);
-
-
     }
 
     @Override

@@ -7,7 +7,7 @@ import gr.aueb.animalshelter.domain.FeedingSchedule;
 
 public class FeedingScheduleDAOMemory implements FeedingScheduleDao {
 
-    protected static ArrayList<FeedingSchedule> entities = new ArrayList<FeedingSchedule>();
+    protected static ArrayList<FeedingSchedule> entities = new ArrayList<>();
     public List<FeedingSchedule> findAll(){
         return new ArrayList<>(entities);
     }

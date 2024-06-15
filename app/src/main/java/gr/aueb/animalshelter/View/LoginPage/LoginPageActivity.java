@@ -21,15 +21,8 @@ public class LoginPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        btn = (Button) findViewById(R.id.loginBtn);
-        ebtn = (Button) findViewById(R.id.employeeLogin);
-
-
-        if(!initialized)
-        {
-            new MemoryInitializer(getApplicationContext()).prepareData();
-            initialized = true;
-        }
+        btn = findViewById(R.id.loginBtn);
+        ebtn = findViewById(R.id.employeeLogin);
     }
     @Override
     protected void onStart() {

@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import gr.aueb.animalshelter.MemoryDAO.FeedingScheduleDAOMemory;
+import gr.aueb.animalshelter.MemoryDAO.ObligationDaoMemory;
 import gr.aueb.animalshelter.domain.Account;
 import gr.aueb.animalshelter.domain.Address;
 import gr.aueb.animalshelter.domain.Adopter;
@@ -122,6 +125,11 @@ import gr.aueb.animalshelter.domain.Specialty;
 
     }
 
+    /**
+     * saves animal images to phone internal storage
+     * @param animals the list of animals whose images will be added
+     */
+
     public void saveAnimalImagesToInternalStorage(List<Animal> animals) {
         Context context = getContext();
         for (Animal animal : animals) {
@@ -133,6 +141,12 @@ import gr.aueb.animalshelter.domain.Specialty;
         }
     }
 
+    /**
+     * helper method to save images from raw directory to internal storage
+     * @param context the context of the activity
+     * @param resourceId the id of the resource to be saved to internal storage
+     * @param outputFileName the file name of the image that will be saved to internal storage
+     */
     private void saveImageFromRawToInternal(Context context, int resourceId, String outputFileName) {
         InputStream inputStream = null;
         FileOutputStream outputStream = null;
@@ -300,7 +314,6 @@ import gr.aueb.animalshelter.domain.Specialty;
     protected abstract AdopterDao getAdopterDao();
     protected abstract AnimalDao getAnimalDao();
     protected abstract FeedingScheduleDao getFeedingScheduleDao();
-  /*  protected abstract ObligationDao getObligationDao();*/
     protected abstract EmployeeDao getEmployeeDao();
     protected abstract AccountDao getAccountDao();
     protected abstract ObligationDao getObligationDao();

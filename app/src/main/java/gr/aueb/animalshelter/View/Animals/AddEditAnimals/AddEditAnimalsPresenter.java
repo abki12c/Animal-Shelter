@@ -58,7 +58,7 @@ public class AddEditAnimalsPresenter {
         String breed = view.getBreed();
         Integer age = view.getAge();
         String description = view.getDescription();
-        Boolean chipped = view.getChipped();
+        boolean chipped = view.getChipped();
         String gender = view.getGender();
         FeedingSchedule feedingSchedule = view.getFeedingSchedule();
 

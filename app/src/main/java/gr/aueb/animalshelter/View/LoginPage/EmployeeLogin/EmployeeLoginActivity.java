@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import gr.aueb.animalshelter.MemoryDAO.AccountDaoMemory;
 import gr.aueb.animalshelter.MemoryDAO.EmployeeDaoMemory;
+import gr.aueb.animalshelter.MemoryDAO.FeedingScheduleDAOMemory;
 import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Employer.Home.EmployerHomePageActivity;
 import gr.aueb.animalshelter.View.Subordinate.SubordinateHomePage.SubordinateHomePageActivity;
@@ -21,7 +22,7 @@ public class EmployeeLoginActivity extends AppCompatActivity implements Employee
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_login);
-        btn = (Button) findViewById(R.id.button);
+        btn = findViewById(R.id.button);
 
     }
     @Override
