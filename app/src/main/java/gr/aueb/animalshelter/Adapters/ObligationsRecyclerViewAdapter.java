@@ -1,4 +1,4 @@
-package gr.aueb.animalshelter.Utils;
+package gr.aueb.animalshelter.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,11 +11,11 @@ import gr.aueb.animalshelter.R;
 public class ObligationsRecyclerViewAdapter extends RecyclerView.Adapter<ObligationsListViewHolder> {
 
     Context context;
-    List<ObligationItem> item;
+    List<ObligationItem> items;
 
-    public ObligationsRecyclerViewAdapter(Context context, List<ObligationItem> item) {
+    public ObligationsRecyclerViewAdapter(Context context, List<ObligationItem> items) {
         this.context = context;
-        this.item = item;
+        this.items = items;
     }
 
     @NonNull
@@ -26,14 +26,13 @@ public class ObligationsRecyclerViewAdapter extends RecyclerView.Adapter<Obligat
 
     @Override
     public void onBindViewHolder(@NonNull ObligationsListViewHolder holder, int position) {
-        holder.nameView.setText(item.get(position).getName());
-        holder.imageView.setImageResource(item.get(position).getImage());
-        holder.descriptionView.setText(item.get(position).getName());
-
+        holder.nameView.setText(items.get(position).getName());
+        holder.descriptionView.setText(items.get(position).getDescription());
+        holder.imageView.setImageResource(items.get(position).getImage());
     }
 
     @Override
     public int getItemCount() {
-        return item.size();
+        return items.size();
     }
 }

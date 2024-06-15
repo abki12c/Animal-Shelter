@@ -13,7 +13,6 @@ import gr.aueb.animalshelter.View.Animals.AddEditAnimals.AddEditAnimalsActivity;
 import gr.aueb.animalshelter.View.Obligations.ManageObligations.ManageObligationsActivity;
 import gr.aueb.animalshelter.View.Statistics.ManageStatistics.ManageStatisticsActivity;
 import gr.aueb.animalshelter.View.Subordinate.SubordinateHomePage.SubordinateHomePageActivity;
-import gr.aueb.animalshelter.View.Subordinate.SubordinateHomePage.SubordinateHomePagePresenter;
 import gr.aueb.animalshelter.View.Subordinate.SubordinateSettings.SubordinateSettingsActivity;
 
 public class ManageAnimalsActivity extends AppCompatActivity implements ManageAnimalsView {

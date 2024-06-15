@@ -90,7 +90,6 @@ public class SubordinateHomePageActivity extends AppCompatActivity implements Su
     public void manageObligations() {
         startActivity(new Intent(getApplicationContext(), ManageObligationsActivity.class));
         overridePendingTransition(0,0);
-
     }
 
     @Override

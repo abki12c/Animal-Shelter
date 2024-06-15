@@ -21,12 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="56dp"
-            android:layout_marginTop="728dp"
+            android:layout_marginTop="76dp"
+            android:layout_marginBottom="30dp"
             android:text="Submit"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.348"
+            app:layout_constraintHorizontal_bias="0.303"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
         <TextView
             android:id="@+id/textView2"
@@ -45,7 +47,7 @@
             android:id="@+id/textView3"
             android:layout_width="56dp"
             android:layout_height="23dp"
-            android:layout_marginTop="128dp"
+            android:layout_marginTop="132dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Type"
             android:textColor="#000000"
@@ -57,7 +59,7 @@
             android:id="@+id/textView5"
             android:layout_width="55dp"
             android:layout_height="25dp"
-            android:layout_marginTop="208dp"
+            android:layout_marginTop="220dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Breed"
             android:textColor="#000000"
@@ -69,7 +71,8 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="276dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="288dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Age"
             android:textColor="#000000"
@@ -81,8 +84,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="364dp"
+            android:layout_marginTop="352dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Chipped"
             android:textColor="#000000"
@@ -106,7 +108,7 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="516dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Gender"
             android:textColor="#000000"
@@ -118,24 +120,24 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="620dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="80dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Feeding Schedule"
             android:textColor="#000000"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/textView9"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <EditText
             android:id="@+id/editName"
-            android:layout_width="212dp"
+            android:layout_width="170dp"
             android:layout_height="48dp"
             android:layout_marginStart="48dp"
             android:layout_marginTop="48dp"
             android:ems="10"
             android:inputType="text"
-            android:text="e.g. Lucius"
+            android:hint="e.g. Lucius"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textView2"
@@ -143,12 +145,12 @@
 
         <EditText
             android:id="@+id/editType"
-            android:layout_width="213dp"
+            android:layout_width="170dp"
             android:layout_height="51dp"
             android:layout_marginTop="120dp"
             android:ems="10"
             android:inputType="text"
-            android:text="e.g. cat"
+            android:hint="e.g. cat"
             app:layout_constraintEnd_toEndOf="@+id/editName"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editName"
@@ -156,12 +158,12 @@
 
         <EditText
             android:id="@+id/editBreed"
-            android:layout_width="210dp"
+            android:layout_width="170dp"
             android:layout_height="48dp"
             android:layout_marginTop="208dp"
             android:ems="10"
             android:inputType="text"
-            android:text="e.g. sphynx"
+            android:hint="e.g. sphynx"
             app:layout_constraintEnd_toEndOf="@+id/editType"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editType"
@@ -169,42 +171,45 @@
 
         <EditText
             android:id="@+id/editDescription"
-            android:layout_width="208dp"
+            android:layout_width="170dp"
             android:layout_height="48dp"
-            android:layout_marginTop="420dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="412dp"
             android:ems="10"
             android:inputType="text|textMultiLine"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/chipped"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="enter some details" />
+            tools:hint="enter some details" />
 
         <RadioGroup
             android:id="@+id/gender_group"
+            android:layout_width="168dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="508dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/editDescription"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editDescription"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="508dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
-                android:layout_marginHorizontal="20dp"
-                android:text="Male"
                 android:id="@+id/male_gender"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:text="Male">
 
             </RadioButton>
 
             <RadioButton
-                android:layout_marginHorizontal="20sp"
-                android:text="Female"
                 android:id="@+id/female_gender"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5sp"
+                android:text="Female">
 
             </RadioButton>
         </RadioGroup>
@@ -213,12 +218,12 @@
 
         <EditText
             android:id="@+id/editAge"
-            android:layout_width="212dp"
+            android:layout_width="170dp"
             android:layout_height="48dp"
             android:layout_marginTop="276dp"
             android:ems="10"
             android:inputType="number"
-            android:text="e.g. 2 "
+            android:hint="e.g. 2 "
             app:layout_constraintEnd_toEndOf="@+id/editBreed"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/editBreed"
@@ -228,13 +233,14 @@
             android:id="@+id/chipped"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="356dp"
-            android:layout_marginEnd="228dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.261"
+            app:layout_constraintStart_toEndOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/editAge" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout6"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="205dp"
             android:layout_height="63dp"

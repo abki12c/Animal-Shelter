@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import gr.aueb.animalshelter.MemoryDAO.AnimalDAOMemory;
 import gr.aueb.animalshelter.R;
-import gr.aueb.animalshelter.Utils.MyAdapter;
+import gr.aueb.animalshelter.Adapters.MyAdapter;
 import gr.aueb.animalshelter.View.Adopter.AdopterHome.AdopterHomeActivity;
 import gr.aueb.animalshelter.View.Adopter.AdopterSettings.ManageProfileActivity;
 import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AdoptionRequestInfo.AdoptionRequestInfoActivity;

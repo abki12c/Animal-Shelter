@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import gr.aueb.animalshelter.MemoryDAO.ObligationDaoMemory;
 import gr.aueb.animalshelter.R;
-import gr.aueb.animalshelter.Utils.ObligationItem;
-import gr.aueb.animalshelter.Utils.ObligationsRecyclerViewAdapter;
+import gr.aueb.animalshelter.Adapters.ObligationItem;
+import gr.aueb.animalshelter.Adapters.ObligationsRecyclerViewAdapter;
 import gr.aueb.animalshelter.View.Animals.ManageAnimals.ManageAnimalsActivity;
 import gr.aueb.animalshelter.View.Statistics.ManageStatistics.ManageStatisticsActivity;
 import gr.aueb.animalshelter.View.Subordinate.SubordinateHomePage.SubordinateHomePageActivity;
@@ -24,6 +24,7 @@ import gr.aueb.animalshelter.domain.Obligation;
 public class ManageObligationsActivity extends AppCompatActivity implements ManageObligationsView {
 
     BottomNavigationView bottomNavigationView;
+    RecyclerView recyclerView;
     SubordinateHomePagePresenter presenter;
 
     @Override
@@ -31,20 +32,19 @@ public class ManageObligationsActivity extends AppCompatActivity implements Mana
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_obligations);
 
-        RecyclerView recyclerView = findViewById(R.id.MyRecyclerViewManageObligations);
+        recyclerView = findViewById(R.id.MyRecyclerViewManageObligations);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<ObligationItem> obligationItemList = createObligationItemList();
 
-
-        recyclerView.setAdapter(new ObligationsRecyclerViewAdapter(getApplicationContext(),obligationItemList));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new ObligationsRecyclerViewAdapter(getApplicationContext(),obligationItemList));
 
 
         final ManageObligationsPresenter presenter = new ManageObligationsPresenter(this);
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView_subordinate);
-        bottomNavigationView.setSelectedItemId(R.id.Home);
+        bottomNavigationView.setSelectedItemId(R.id.Obligations);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -71,10 +71,11 @@ public class ManageObligationsActivity extends AppCompatActivity implements Mana
 
     }
 
-    List<ObligationItem> createObligationItemList(){
+    public List<ObligationItem> createObligationItemList(){
         int accountId = SubordinateHomePageActivity.accountID;
         List<Obligation> obligationList = new ObligationDaoMemory().findAll();
-        List<ObligationItem> obligationItems = new ArrayList<ObligationItem>();
+        List<ObligationItem> obligationItems = new ArrayList<>();
+        System.out.println("size: "+obligationItems.size());
 
         for(Obligation obligation : obligationList){
             obligationItems.add(new ObligationItem(obligation.getAnimal().getName(),obligation.getDescription() , R.drawable.ic_obligation));

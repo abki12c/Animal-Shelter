@@ -14,7 +14,7 @@ public class FeedingScheduleDAOMemory implements FeedingScheduleDao {
 
     public List<String> findAllNamesPlusID(){
         List<FeedingSchedule> feedingSchedules = findAll();
-        List<String> names = null;
+        List<String> names = new ArrayList<>();
         for(FeedingSchedule feedingSchedule : feedingSchedules){
             names.add(feedingSchedule.getName()+"#"+ feedingSchedule.getID());
         }

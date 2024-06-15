@@ -21,7 +21,7 @@ import gr.aueb.animalshelter.domain.FeedingSchedule;
  */
 
 public class AddEditAnimalsActivity extends AppCompatActivity implements AddEditAnimalsView {
-    ArrayList<String> feedingSchedules =null ;
+    ArrayList<String> feedingSchedules =new ArrayList<>() ;
     private ArrayAdapter<String> adapterFeedingSchedules=null;
     private AutoCompleteTextView autoCompleteTextViewFeedingSchedules;
 

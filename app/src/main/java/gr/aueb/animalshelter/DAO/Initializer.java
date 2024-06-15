@@ -171,12 +171,12 @@ import gr.aueb.animalshelter.domain.Specialty;
      * @return the list of feeding schedules added to be used in another function
      */
     public List<FeedingSchedule> addFeedingSchedules(){
-        FeedingSchedule feedingScheduleDog = new FeedingSchedule("basic feeding schedule for dog","dog","bulldog","dry dog food", "water", "250g","10:00, 15:00, 21:00");
-        FeedingSchedule feedingScheduleCat = new FeedingSchedule("basic feeding schedule for cat","cat","sphynx","dry cat food", "water", "100g","9:00, 14:30, 21:00");
-        FeedingSchedule feedingScheduleBird = new FeedingSchedule("basic feeding schedule for bird","bird","cockatoo","pellets", "water", "50g","9:30, 13:30, 20:00");
-        FeedingSchedule feedingSchedulePrairieDog = new FeedingSchedule("basic feeding schedule for prairie dog","prairie dog","Utah prairie dog","carrots","water","20g","9:30, 13:30, 20:00");
-        FeedingSchedule feedingScheduleMarmot = new FeedingSchedule("basic feeding schedule for marmot","marmot","Himalayan marmot","corn flakes","water","20g","9:30, 13:30, 20:00");
-        FeedingSchedule feedingScheduleSquirrel = new FeedingSchedule("basic feeding schedule for squirrel","squirrel","Western gray squirrel","avocado","water","15g","9:30, 13:30, 20:00");
+        FeedingSchedule feedingScheduleDog = new FeedingSchedule("schedule for dog","dog","bulldog","dry dog food", "water", "250g","10:00, 15:00, 21:00");
+        FeedingSchedule feedingScheduleCat = new FeedingSchedule("schedule for cat","cat","sphynx","dry cat food", "water", "100g","9:00, 14:30, 21:00");
+        FeedingSchedule feedingScheduleBird = new FeedingSchedule("schedule for bird","bird","cockatoo","pellets", "water", "50g","9:30, 13:30, 20:00");
+        FeedingSchedule feedingSchedulePrairieDog = new FeedingSchedule("schedule for prairie dog","prairie dog","Utah prairie dog","carrots","water","20g","9:30, 13:30, 20:00");
+        FeedingSchedule feedingScheduleMarmot = new FeedingSchedule("schedule for marmot","marmot","Himalayan marmot","corn flakes","water","20g","9:30, 13:30, 20:00");
+        FeedingSchedule feedingScheduleSquirrel = new FeedingSchedule("schedule for squirrel","squirrel","Western gray squirrel","avocado","water","15g","9:30, 13:30, 20:00");
 
 
         // create and return a list that includes the feedingSchedules

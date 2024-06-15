@@ -1,4 +1,4 @@
-package gr.aueb.animalshelter.Utils;
+package gr.aueb.animalshelter.Adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;

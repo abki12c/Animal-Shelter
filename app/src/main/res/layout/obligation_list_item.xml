@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:id="@+id/imageview"
+        android:id="@+id/obligationPic"
         android:layout_marginRight="10dp"
         android:layout_centerVertical="true"
         />
@@ -16,8 +16,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/name"
-        android:layout_toEndOf="@id/imageview"
+        android:id="@+id/obligationAnimalName"
+        android:layout_toEndOf="@id/obligationPic"
         android:textColor="@color/black"
         android:textSize="20dp"
         tools:text="Name"/>
@@ -25,9 +25,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/description"
-        android:layout_toEndOf="@id/imageview"
-        android:layout_below="@id/name"
+        android:id="@+id/obligationDescription"
+        android:layout_toEndOf="@id/obligationPic"
+        android:layout_below="@id/obligationAnimalName"
         android:textColor="@color/black"
         tools:text="Description"/>
 

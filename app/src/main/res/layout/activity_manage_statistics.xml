@@ -54,7 +54,7 @@
         android:id="@+id/animals_adopted"
         android:layout_width="150dp"
         android:layout_height="65dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="48dp"
         android:text="Animals Adopted"
         app:layout_constraintEnd_toEndOf="@+id/animals_breeds"
         app:layout_constraintHorizontal_bias="0.0"
