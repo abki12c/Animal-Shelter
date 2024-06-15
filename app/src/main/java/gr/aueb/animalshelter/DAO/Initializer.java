@@ -100,13 +100,9 @@ import gr.aueb.animalshelter.domain.Specialty;
         Animal cat = new Animal("Cracker","cat","sphynx",3,true,"Cracker is very energetic. She likes eating food and scaring our customers","female",feedingSchedules.get(1),"cracker.jpg");
         Animal bird = new Animal("Buddy","bird","cockatoo",3,true,"Buddy is very playful. He likes palying with our toys and eating snacks from the hands of our visitors","male", feedingSchedules.get(2),"buddy.jpg");
         Animal prairie_dog = new Animal("Poppy","prairie dog","Utah prairie dog",2,false,"Poppy likes snuggles and yahoos!!","female",feedingSchedules.get(3),"poppy.jpg");
+        Animal marmot = new Animal("Marmoto","marmot","Himalayan marmot",2,false,"Marmot king likes baths","male",feedingSchedules.get(4),"marmot.jpg");
+        Animal squirrel = new Animal("Thumbelina","squirrel","Western gray squirrel",2,false,"She is scared of frogs","female",feedingSchedules.get(5),"thumbelina.jpg");
 
-
-        // save data on DAO
-        getAnimalDao().save(dog);
-        getAnimalDao().save(cat);
-        getAnimalDao().save(bird);
-        getAnimalDao().save(prairie_dog);
 
         // create and return a list that includes the animals
         List<Animal> animals = new ArrayList<>();
@@ -114,6 +110,13 @@ import gr.aueb.animalshelter.domain.Specialty;
         animals.add(cat);
         animals.add(bird);
         animals.add(prairie_dog);
+        animals.add(marmot);
+        animals.add(squirrel);
+
+        // save data on DAO
+        for (Animal animal : animals) {
+            getAnimalDao().save(animal);
+        }
 
         saveAnimalImagesToInternalStorage(animals);
 
@@ -124,7 +127,8 @@ import gr.aueb.animalshelter.domain.Specialty;
     public void saveAnimalImagesToInternalStorage(List<Animal> animals) {
         Context context = getContext();
         for (Animal animal : animals) {
-            int resourceId = context.getResources().getIdentifier(animal.getImageName(), "raw", context.getPackageName());
+            String imageName = animal.getImageName().substring(0, animal.getImageName().lastIndexOf('.'));
+            int resourceId = context.getResources().getIdentifier(imageName, "raw", context.getPackageName());
             if (resourceId != 0) {
                 saveImageFromRawToInternal(context, resourceId, animal.getImageName());
             }
@@ -173,11 +177,8 @@ import gr.aueb.animalshelter.domain.Specialty;
         FeedingSchedule feedingScheduleCat = new FeedingSchedule("basic feeding schedule for cat","cat","sphynx","dry cat food", "water", "100g","9:00, 14:30, 21:00");
         FeedingSchedule feedingScheduleBird = new FeedingSchedule("basic feeding schedule for bird","bird","cockatoo","pellets", "water", "50g","9:30, 13:30, 20:00");
         FeedingSchedule feedingSchedulePrairieDog = new FeedingSchedule("basic feeding schedule for prairie dog","prairie dog","Utah prairie dog","carrots","water","20g","9:30, 13:30, 20:00");
-
-        // save data on DAO
-        getFeedingScheduleDao().save(feedingScheduleDog);
-        getFeedingScheduleDao().save(feedingScheduleCat);
-        getFeedingScheduleDao().save(feedingScheduleBird);
+        FeedingSchedule feedingScheduleMarmot = new FeedingSchedule("basic feeding schedule for marmot","marmot","Himalayan marmot","corn flakes","water","20g","9:30, 13:30, 20:00");
+        FeedingSchedule feedingScheduleSquirrel = new FeedingSchedule("basic feeding schedule for squirrel","squirrel","Western gray squirrel","avocado","water","15g","9:30, 13:30, 20:00");
 
 
         // create and return a list that includes the feedingSchedules
@@ -186,6 +187,14 @@ import gr.aueb.animalshelter.domain.Specialty;
         feedingSchedules.add(feedingScheduleCat);
         feedingSchedules.add(feedingScheduleBird);
         feedingSchedules.add(feedingSchedulePrairieDog);
+        feedingSchedules.add(feedingScheduleMarmot);
+        feedingSchedules.add(feedingScheduleSquirrel);
+
+
+        // save data on DAO
+        for (FeedingSchedule schedule : feedingSchedules) {
+            getFeedingScheduleDao().save(schedule);
+        }
 
         return feedingSchedules;
     }
@@ -220,20 +229,17 @@ import gr.aueb.animalshelter.domain.Specialty;
         Employee subordinate2 = new Employee(accounts.get(2), "Johny", "Depp",Specialty.cleaning);
         Employee subordinate3 = new Employee(accounts.get(3), "Harry", "Potter", Specialty.vet);
 
-
-        //save data on DAO
-        getEmployeeDao().save(chief);
-        getEmployeeDao().save(subordinate1);
-        getEmployeeDao().save(subordinate2);
-        getEmployeeDao().save(subordinate3);
-
-
         //create and return a list that includes the Employees
         List<Employee> subordinates = new ArrayList<>();
         subordinates.add(subordinate1);
         subordinates.add(subordinate2);
         subordinates.add(subordinate3);
 
+        //save data on DAO
+        getEmployeeDao().save(chief);
+        for (Employee subordinate : subordinates) {
+            getEmployeeDao().save(subordinate);
+        }
 
         //save
 
@@ -271,11 +277,6 @@ import gr.aueb.animalshelter.domain.Specialty;
         Account accountSubordinate2 = new Account("Johny_Deep","No-caribbean");
         Account accountSubordinate3 = new Account("Harry_Potta22","expecto_patronum");
 
-        //save data on DAO
-        getAccountDao().save(accountChief);
-        getAccountDao().save(accountSubordinate1);
-        getAccountDao().save(accountSubordinate2);
-        getAccountDao().save(accountSubordinate3);
 
         //create and return a list that includes the Employees
         List<Account> accounts = new ArrayList<>();
@@ -283,6 +284,14 @@ import gr.aueb.animalshelter.domain.Specialty;
         accounts.add(accountSubordinate1);
         accounts.add(accountSubordinate2);
         accounts.add(accountSubordinate3);
+
+
+        // save data on DAO
+        for (Account account : accounts) {
+            getAccountDao().save(account);
+        }
+
+
         return accounts;
 
     }

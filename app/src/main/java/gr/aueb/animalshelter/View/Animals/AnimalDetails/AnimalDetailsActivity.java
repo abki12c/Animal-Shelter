@@ -49,9 +49,6 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
 
         presenter.onLoadAnimal(animalId);
 
-
-
-
     }
 
 
