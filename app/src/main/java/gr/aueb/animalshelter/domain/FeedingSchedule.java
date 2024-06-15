@@ -1,7 +1,6 @@
 package gr.aueb.animalshelter.domain;
 
 import androidx.annotation.NonNull;
-
 import java.io.Serializable;
 
 /** Class for the Feeding Schedule of an {@link Animal}.

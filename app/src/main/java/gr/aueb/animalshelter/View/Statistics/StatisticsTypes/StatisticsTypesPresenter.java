@@ -1,7 +1,5 @@
 package gr.aueb.animalshelter.View.Statistics.StatisticsTypes;
 
-import gr.aueb.animalshelter.View.Statistics.StatisticsBreeds.StatisticsBreedsView;
-
 public class StatisticsTypesPresenter {
     private StatisticsTypesView view;
 

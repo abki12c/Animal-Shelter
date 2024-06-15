@@ -7,13 +7,10 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.EditText;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import gr.aueb.animalshelter.MemoryDAO.AnimalDAOMemory;
 import gr.aueb.animalshelter.MemoryDAO.FeedingScheduleDAOMemory;
 import gr.aueb.animalshelter.R;

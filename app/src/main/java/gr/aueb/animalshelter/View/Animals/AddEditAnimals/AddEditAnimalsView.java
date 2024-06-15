@@ -1,7 +1,6 @@
 package gr.aueb.animalshelter.View.Animals.AddEditAnimals;
 
 import java.util.List;
-
 import gr.aueb.animalshelter.domain.FeedingSchedule;
 
 /** View for the addition and edit of an animal

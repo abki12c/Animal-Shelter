@@ -1,7 +1,6 @@
 package gr.aueb.animalshelter.View.Statistics.StatisticsBreeds;
 
 import android.widget.TextView;
-
 import java.util.List;
 
 public interface StatisticsBreedsView {

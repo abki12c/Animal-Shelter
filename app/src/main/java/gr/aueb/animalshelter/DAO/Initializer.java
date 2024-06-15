@@ -1,7 +1,6 @@
 package gr.aueb.animalshelter.DAO;
 
 import android.content.Context;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,7 +9,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import gr.aueb.animalshelter.domain.Account;
 import gr.aueb.animalshelter.domain.Address;
 import gr.aueb.animalshelter.domain.Adopter;
@@ -225,7 +223,7 @@ import gr.aueb.animalshelter.domain.Specialty;
      */
     public List<Employee> addEmployees(List<Account> accounts){
         Employee chief = new Employee(accounts.get(0),"Bob", "Bobster",Specialty.bureaucratic_tasks);
-        Employee subordinate1 = new Employee(accounts.get(1), "Mark", "Zuckerberg",Specialty.nutrisionist);
+        Employee subordinate1 = new Employee(accounts.get(1), "Mark", "Zuckerberg",Specialty.nutritionist);
         Employee subordinate2 = new Employee(accounts.get(2), "Johny", "Depp",Specialty.cleaning);
         Employee subordinate3 = new Employee(accounts.get(3), "Harry", "Potter", Specialty.vet);
 

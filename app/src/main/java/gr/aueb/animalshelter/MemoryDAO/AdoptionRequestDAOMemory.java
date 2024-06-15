@@ -3,7 +3,6 @@ package gr.aueb.animalshelter.MemoryDAO;
 import gr.aueb.animalshelter.DAO.AdoptionRequestDao;
 import gr.aueb.animalshelter.domain.AdoptionRequest;
 import gr.aueb.animalshelter.domain.Animal;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;

@@ -2,7 +2,6 @@ package gr.aueb.animalshelter.MemoryDAO;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import gr.aueb.animalshelter.DAO.AccountDao;
 import gr.aueb.animalshelter.domain.Account;
 

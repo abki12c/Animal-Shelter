@@ -5,12 +5,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Animals.ManageAnimals.ManageAnimalsActivity;
 import gr.aueb.animalshelter.View.Obligations.ManageObligations.ManageObligationsActivity;

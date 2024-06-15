@@ -1,9 +1,5 @@
 package gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AdoptionRequestInfo;
 
-import android.widget.EditText;
-
-import gr.aueb.animalshelter.R;
-
 public interface AdoptionRequestInfoView {
     /**
      * When user clicks on Add Request button on the menu

@@ -1,7 +1,5 @@
 package gr.aueb.animalshelter.View.Statistics.StatisticsBreeds;
 
-import android.text.method.ScrollingMovementMethod;
-
 import java.util.List;
 
 import gr.aueb.animalshelter.DAO.AnimalDao;

@@ -1,7 +1,6 @@
 package gr.aueb.animalshelter.View.Animals.AddEditAnimals;
 
 import java.util.List;
-
 import gr.aueb.animalshelter.DAO.AnimalDao;
 import gr.aueb.animalshelter.DAO.FeedingScheduleDao;
 import gr.aueb.animalshelter.domain.Animal;

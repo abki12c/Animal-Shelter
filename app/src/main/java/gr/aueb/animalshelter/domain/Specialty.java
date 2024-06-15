@@ -11,5 +11,5 @@ public enum Specialty implements Serializable {
     medical_care,
     vet,
     bureaucratic_tasks,
-    nutrisionist
+    nutritionist
 }

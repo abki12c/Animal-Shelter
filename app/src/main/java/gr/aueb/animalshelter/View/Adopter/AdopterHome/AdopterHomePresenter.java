@@ -1,6 +1,6 @@
 package gr.aueb.animalshelter.View.Adopter.AdopterHome;
-import java.util.List;
 
+import java.util.List;
 import gr.aueb.animalshelter.DAO.AnimalDao;
 import gr.aueb.animalshelter.domain.Animal;
 

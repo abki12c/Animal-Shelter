@@ -4,13 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Animals.AddEditAnimals.AddEditAnimalsActivity;
 import gr.aueb.animalshelter.View.Obligations.ManageObligations.ManageObligationsActivity;

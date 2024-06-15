@@ -3,12 +3,9 @@ package gr.aueb.animalshelter.View.Adopter.AdopterSettings.ContactInfo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Adopter.AdopterHome.AdopterHomeActivity;
 import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AddAdoptionRequestActivity;

@@ -3,13 +3,9 @@ package gr.aueb.animalshelter.View.Subordinate.SubordinateHomePage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Animals.ManageAnimals.ManageAnimalsActivity;
 import gr.aueb.animalshelter.View.Obligations.ManageObligations.ManageObligationsActivity;

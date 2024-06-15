@@ -1,7 +1,6 @@
 package gr.aueb.animalshelter.domain;
 
 import androidx.annotation.NonNull;
-
 import java.time.LocalDateTime;
 
 /** Class for the obligations of a subordinate staff which is an {@link Employee} of the Animal Shelter.

@@ -2,7 +2,6 @@ package gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import gr.aueb.animalshelter.DAO.AnimalDao;
 import gr.aueb.animalshelter.domain.Animal;
 

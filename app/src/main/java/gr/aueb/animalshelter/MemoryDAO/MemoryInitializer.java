@@ -1,9 +1,7 @@
 package gr.aueb.animalshelter.MemoryDAO;
 
 import android.content.Context;
-
 import java.util.List;
-
 import gr.aueb.animalshelter.DAO.AccountDao;
 import gr.aueb.animalshelter.DAO.AdopterDao;
 import gr.aueb.animalshelter.DAO.AdoptionDao;

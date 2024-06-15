@@ -1,7 +1,6 @@
 package gr.aueb.animalshelter.DAO;
 
 import java.util.List;
-
 import gr.aueb.animalshelter.domain.Adoption;
 
 /**

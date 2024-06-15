@@ -7,13 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import gr.aueb.animalshelter.MemoryDAO.AdoptionRequestDAOMemory;
 import gr.aueb.animalshelter.MemoryDAO.AnimalDAOMemory;
 import gr.aueb.animalshelter.R;

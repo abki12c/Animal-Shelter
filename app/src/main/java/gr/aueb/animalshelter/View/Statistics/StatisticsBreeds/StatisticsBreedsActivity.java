@@ -9,15 +9,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import gr.aueb.animalshelter.MemoryDAO.AnimalDAOMemory;
 import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Animals.ManageAnimals.ManageAnimalsActivity;

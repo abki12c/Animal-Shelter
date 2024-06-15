@@ -1,9 +1,7 @@
 package gr.aueb.animalshelter.View.Employer.Home;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-
 import gr.aueb.animalshelter.R;
 
 public class EmployerHomePageActivity extends AppCompatActivity {

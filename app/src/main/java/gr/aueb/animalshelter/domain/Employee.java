@@ -1,11 +1,6 @@
 package gr.aueb.animalshelter.domain;
 
-import android.annotation.SuppressLint;
-import android.os.Build;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

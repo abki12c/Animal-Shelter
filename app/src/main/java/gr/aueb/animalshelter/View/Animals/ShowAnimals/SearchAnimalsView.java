@@ -1,7 +1,6 @@
 package gr.aueb.animalshelter.View.Animals.ShowAnimals;
 
 import java.util.List;
-
 import gr.aueb.animalshelter.domain.Animal;
 
 public interface SearchAnimalsView {
