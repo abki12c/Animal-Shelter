@@ -35,8 +35,8 @@ public class SubordinateSettingsActivity extends AppCompatActivity implements Su
         bottomNavigationView = findViewById(R.id.bottomNavigationView_subordinate);
         bottomNavigationView.setSelectedItemId(R.id.Settings);
 
-        logout = (Button) findViewById(R.id.logoutButton);
-        info = (Button) findViewById(R.id.contact_info);
+        logout = findViewById(R.id.logoutButton);
+        info = findViewById(R.id.contact_info);
 
 
 
@@ -116,6 +116,7 @@ public class SubordinateSettingsActivity extends AppCompatActivity implements Su
     public void viewHomePage(){
         Intent intent = new Intent(SubordinateSettingsActivity.this, SubordinateHomePageActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
     }
     /**
      * when navigation menu on the bottom

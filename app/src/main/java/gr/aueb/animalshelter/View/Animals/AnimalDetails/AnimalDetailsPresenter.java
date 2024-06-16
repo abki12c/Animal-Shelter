@@ -69,10 +69,4 @@ public class AnimalDetailsPresenter {
         view.manageProfile();
     }
 
-    /**
-     * To go to Search Animals Page
-     */
-    void onSearch(){
-        view.search();
-    }
 }

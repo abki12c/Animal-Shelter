@@ -32,13 +32,6 @@ public class ContactInfoPresenter {
     }
 
     /**
-     * To go to Search Animals Page
-     */
-
-    void onSearch(){
-        view.search();
-    }
-    /**
      *loads the information page of the shelter
      */
 

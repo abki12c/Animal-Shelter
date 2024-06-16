@@ -29,13 +29,7 @@ public class ManageProfilePresenter {
         view.manageProfile();
     }
 
-    /**
-     * To go to Search Animals Page
-     */
 
-    void onSearch(){
-        view.search();
-    }
     /**
      *loads the information page of the shelter
      */

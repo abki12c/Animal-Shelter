@@ -12,7 +12,6 @@ import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Adopter.AdopterHome.AdopterHomeActivity;
 import gr.aueb.animalshelter.View.Adopter.AdopterSettings.ContactInfo.ContactInfoActivity;
 import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AddAdoptionRequestActivity;
-import gr.aueb.animalshelter.View.Animals.ShowAnimals.SearchAnimalsActivity;
 import gr.aueb.animalshelter.View.LoginPage.LoginPageActivity;
 
 public class ManageProfileActivity  extends AppCompatActivity implements ManageProfileView,BottomNavigationView .OnNavigationItemSelectedListener{
@@ -95,6 +94,7 @@ public class ManageProfileActivity  extends AppCompatActivity implements ManageP
     public void createAdoptionRequest(){
         Intent intent = new Intent(ManageProfileActivity.this, AddAdoptionRequestActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
 
     }
     /**
@@ -106,6 +106,7 @@ public class ManageProfileActivity  extends AppCompatActivity implements ManageP
     public void viewHomePage(){
         Intent intent = new Intent(ManageProfileActivity.this, AdopterHomeActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
     }
     /**
      * when navigation menu on the bottom
@@ -116,15 +117,7 @@ public class ManageProfileActivity  extends AppCompatActivity implements ManageP
     public void manageProfile(){
         //do nothing
     }
-    /**
-     * when navigation menu on the bottom
-     * of the screen is clicked and the choice is
-     * search then the user goes to the Search Animals Page
-     */
-    public void search(){
-        Intent intent = new Intent(ManageProfileActivity.this, SearchAnimalsActivity.class);
-        startActivity(intent);
-    }
+
     /**
      * Navigation menu on the bottom of the screen
      */
@@ -145,9 +138,6 @@ public class ManageProfileActivity  extends AppCompatActivity implements ManageP
 
             case R.id.settings:
                 presenter.onManageProfile();
-                return true;
-            case R.id.search:
-                presenter.onSearch();
                 return true;
         }
         return false;

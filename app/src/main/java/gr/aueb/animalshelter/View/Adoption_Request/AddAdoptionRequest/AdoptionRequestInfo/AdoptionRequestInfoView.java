@@ -19,12 +19,6 @@ public interface AdoptionRequestInfoView {
      */
     void viewHomePage();
     /**
-     * When user clicks on search button on the menu
-     * it loads the searchAnimalsActivity if not in activity already
-     */
-
-    void search();
-    /**
      * Message that shows in case of error
      * @param title The title of the error
      * @param s message content

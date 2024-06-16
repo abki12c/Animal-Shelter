@@ -19,10 +19,4 @@ public interface ContactInfoView {
      * it loads the manageAdoptionRequestsActivity if not in activity already
      */
     void viewHomePage();
-    /**
-     * When user clicks on search button on the menu
-     * it loads the searchAnimalsActivity if not in activity already
-     */
-
-    void search();
 }

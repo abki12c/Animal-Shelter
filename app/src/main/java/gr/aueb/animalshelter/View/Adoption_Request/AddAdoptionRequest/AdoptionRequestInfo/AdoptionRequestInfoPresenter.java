@@ -48,13 +48,6 @@ public class AdoptionRequestInfoPresenter {
     }
 
     /**
-     * To go to Search Animals Page
-     */
-
-   public void onSearch(){
-        view.search();
-    }
-    /**
      * Saves the adoption request in the AdoptionRequestDao
      */
     public void onSaveAdoptionRequest()

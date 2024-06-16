@@ -18,9 +18,7 @@ import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.Adapters.MyAdapter;
 import gr.aueb.animalshelter.View.Adopter.AdopterHome.AdopterHomeActivity;
 import gr.aueb.animalshelter.View.Adopter.AdopterSettings.ManageProfileActivity;
-import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AdoptionRequestInfo.AdoptionRequestInfoActivity;
 import gr.aueb.animalshelter.View.Animals.AnimalDetails.AnimalDetailsActivity;
-import gr.aueb.animalshelter.View.Animals.ShowAnimals.SearchAnimalsActivity;
 import gr.aueb.animalshelter.domain.Animal;
 
 public class AddAdoptionRequestActivity extends AppCompatActivity implements AddAdoptionRequestView, BottomNavigationView .OnNavigationItemSelectedListener {
@@ -221,9 +219,6 @@ public class AddAdoptionRequestActivity extends AppCompatActivity implements Add
             case R.id.settings:
                 presenter.onManageProfile();
                 return true;
-            case R.id.search:
-                presenter.onSearch();
-                return true;
         }
         return false;
     }
@@ -245,6 +240,7 @@ public class AddAdoptionRequestActivity extends AppCompatActivity implements Add
     public void viewHomePage(){
         Intent intent = new Intent(AddAdoptionRequestActivity.this, AdopterHomeActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
     }
     /**
      * when navigation menu on the bottom
@@ -254,15 +250,7 @@ public class AddAdoptionRequestActivity extends AppCompatActivity implements Add
     public void manageProfile(){
         Intent intent = new Intent(AddAdoptionRequestActivity.this, ManageProfileActivity.class);
         startActivity(intent);
-    }
-    /**
-     * when navigation menu on the bottom
-     * of the screen is clicked and the choice is
-     * search then the user goes to the Search Animals Page
-     */
-    public void search(){
-        Intent intent = new Intent(AddAdoptionRequestActivity.this, SearchAnimalsActivity.class);
-        startActivity(intent);
+        overridePendingTransition(0,0);
     }
 
 

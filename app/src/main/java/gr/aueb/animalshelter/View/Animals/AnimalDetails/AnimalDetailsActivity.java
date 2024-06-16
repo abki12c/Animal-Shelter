@@ -20,8 +20,6 @@ import gr.aueb.animalshelter.View.Adopter.AdopterHome.AdopterHomeActivity;
 import gr.aueb.animalshelter.View.Adopter.AdopterSettings.ManageProfileActivity;
 import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AddAdoptionRequestActivity;
 import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AdoptionRequestInfo.AdoptionRequestInfoActivity;
-import gr.aueb.animalshelter.View.Animals.ShowAnimals.SearchAnimalsActivity;
-import gr.aueb.animalshelter.domain.Animal;
 
 
 public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalDetailsView, BottomNavigationView.OnNavigationItemSelectedListener {
@@ -81,9 +79,6 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
 
             case R.id.settings:
                 presenter.onManageProfile();
-                return true;
-            case R.id.search:
-                presenter.onSearch();
                 return true;
         }
         return false;
@@ -201,6 +196,7 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
     public void createAdoptionRequest(){
         Intent intent = new Intent(AnimalDetailsActivity.this, AddAdoptionRequestActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
 
     }
 
@@ -216,6 +212,7 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
         Intent intent = new Intent(this, AdoptionRequestInfoActivity.class);
         intent.putExtra("animal",animalId);
         startActivity(intent);
+        overridePendingTransition(0,0);
     }
 
     /**
@@ -227,6 +224,7 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
     public void viewHomePage(){
         Intent intent = new Intent(AnimalDetailsActivity.this, AdopterHomeActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
     }
     /**
      * when navigation menu on the bottom
@@ -236,17 +234,8 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
     public void manageProfile(){
         Intent intent = new Intent(AnimalDetailsActivity.this, ManageProfileActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
     }
-    /**
-     * when navigation menu on the bottom
-     * of the screen is clicked and the choice is
-     * search then the user goes to the Search Animals Page
-     */
-    public void search(){
-        Intent intent = new Intent(AnimalDetailsActivity.this, SearchAnimalsActivity.class);
-        startActivity(intent);
-    }
-
 
 
 }

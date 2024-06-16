@@ -31,13 +31,6 @@ public class AddAdoptionRequestPresenter {
         view.manageProfile();
     }
     /**
-     * To go to Search Animals Page
-     */
-
-    void onSearch(){
-        view.search();
-    }
-    /**
      * Goes to Animal Details activity to display more
      * information for the chosen animal
      * @param a the animal chosen

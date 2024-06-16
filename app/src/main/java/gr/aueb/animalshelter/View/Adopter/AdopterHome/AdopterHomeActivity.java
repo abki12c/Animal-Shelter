@@ -21,9 +21,6 @@ import gr.aueb.animalshelter.MemoryDAO.AnimalDAOMemory;
 import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Adopter.AdopterSettings.ManageProfileActivity;
 import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AddAdoptionRequestActivity;
-
-import gr.aueb.animalshelter.View.Animals.ShowAnimals.SearchAnimalsActivity;
-
 public class AdopterHomeActivity extends AppCompatActivity implements AdopterHomeView, BottomNavigationView .OnNavigationItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
@@ -115,6 +112,7 @@ public class AdopterHomeActivity extends AppCompatActivity implements AdopterHom
     public void createAdoptionRequest(){
         Intent intent = new Intent(AdopterHomeActivity.this, AddAdoptionRequestActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
 
     }
     /**
@@ -137,17 +135,7 @@ public class AdopterHomeActivity extends AppCompatActivity implements AdopterHom
     public void manageProfile(){
         Intent intent = new Intent(AdopterHomeActivity.this, ManageProfileActivity.class);
         startActivity(intent);
-    }
-
-    /**
-     * when navigation menu on the bottom
-     * of the screen is clicked and the choice is
-     * search then the user goes to the Search Animals Page
-     */
-
-    public void search(){
-        Intent intent = new Intent(AdopterHomeActivity.this, SearchAnimalsActivity.class);
-        startActivity(intent);
+        overridePendingTransition(0,0);
     }
 
 
@@ -175,9 +163,6 @@ public class AdopterHomeActivity extends AppCompatActivity implements AdopterHom
 
             case R.id.settings:
                 presenter.onManageProfile();
-                return true;
-            case R.id.search:
-                presenter.onSearch();
                 return true;
         }
         return false;

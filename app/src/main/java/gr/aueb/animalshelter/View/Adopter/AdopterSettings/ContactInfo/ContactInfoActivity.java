@@ -9,7 +9,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Adopter.AdopterHome.AdopterHomeActivity;
 import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AddAdoptionRequestActivity;
-import gr.aueb.animalshelter.View.Animals.ShowAnimals.SearchAnimalsActivity;
 
 public class ContactInfoActivity  extends AppCompatActivity implements ContactInfoView,BottomNavigationView .OnNavigationItemSelectedListener{
     BottomNavigationView bottomNavigationView;
@@ -44,6 +43,7 @@ public class ContactInfoActivity  extends AppCompatActivity implements ContactIn
     public void createAdoptionRequest(){
         Intent intent = new Intent(ContactInfoActivity.this, AddAdoptionRequestActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
 
     }
     /**
@@ -54,6 +54,7 @@ public class ContactInfoActivity  extends AppCompatActivity implements ContactIn
     public void viewHomePage(){
         Intent intent = new Intent(ContactInfoActivity.this, AdopterHomeActivity.class);
         startActivity(intent);
+        overridePendingTransition(0,0);
     }
     /**
      * when navigation menu on the bottom
@@ -63,16 +64,6 @@ public class ContactInfoActivity  extends AppCompatActivity implements ContactIn
     public void manageProfile(){
         //do nothing
     }
-    /**
-     * when navigation menu on the bottom
-     * of the screen is clicked and the choice is
-     * search then the user goes to the Search Animals Page
-     */
-    public void search(){
-        Intent intent = new Intent(ContactInfoActivity.this, SearchAnimalsActivity.class);
-        startActivity(intent);
-    }
-
 
     /**
      * Navigation menu on the bottom of the screen
@@ -95,9 +86,6 @@ public class ContactInfoActivity  extends AppCompatActivity implements ContactIn
 
             case R.id.settings:
                 presenter.onManageProfile();
-                return true;
-            case R.id.search:
-                presenter.onSearch();
                 return true;
         }
         return false;
