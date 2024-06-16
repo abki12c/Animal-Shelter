@@ -6,18 +6,27 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import java.util.ArrayList;
+import java.util.List;
+import gr.aueb.animalshelter.Adapters.AnimalItem;
+import gr.aueb.animalshelter.Adapters.AnimalsRecyclerViewAdapter;
+import gr.aueb.animalshelter.MemoryDAO.AnimalDAOMemory;
 import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Animals.AddEditAnimals.AddEditAnimalsActivity;
 import gr.aueb.animalshelter.View.Obligations.ManageObligations.ManageObligationsActivity;
 import gr.aueb.animalshelter.View.Statistics.ManageStatistics.ManageStatisticsActivity;
 import gr.aueb.animalshelter.View.Subordinate.SubordinateHomePage.SubordinateHomePageActivity;
 import gr.aueb.animalshelter.View.Subordinate.SubordinateSettings.SubordinateSettingsActivity;
+import gr.aueb.animalshelter.domain.Animal;
 
 public class ManageAnimalsActivity extends AppCompatActivity implements ManageAnimalsView {
     BottomNavigationView bottomNavigationView;
     FloatingActionButton actionBtn;
+    RecyclerView recyclerView;
     ManageAnimalsPresenter presenter;
 
     @Override
@@ -30,7 +39,14 @@ public class ManageAnimalsActivity extends AppCompatActivity implements ManageAn
         bottomNavigationView = findViewById(R.id.bottomNavigationView_subordinate);
         bottomNavigationView.setSelectedItemId(R.id.Animals);
         actionBtn = findViewById(R.id.floatingActionButton5);
+        recyclerView = findViewById(R.id.recyclerViewManageAnimals);
 
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        List<AnimalItem> animalList = createAnimalsList();
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new AnimalsRecyclerViewAdapter(getApplicationContext(),animalList));
 
         actionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +79,16 @@ public class ManageAnimalsActivity extends AppCompatActivity implements ManageAn
             }
         });
 
+    }
+
+
+    public List<AnimalItem> createAnimalsList(){
+        List<Animal> animals = new AnimalDAOMemory().findAll();
+        List<AnimalItem> animalItemList = new ArrayList<>();
+        for (Animal animal:animals){
+            animalItemList.add(new AnimalItem(animal.getName(),R.drawable.ic_pets_foreground));
+        }
+        return animalItemList;
     }
 
 

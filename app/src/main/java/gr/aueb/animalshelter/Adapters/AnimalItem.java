@@ -1,13 +1,11 @@
 package gr.aueb.animalshelter.Adapters;
 
-public class ObligationItem {
+public class AnimalItem {
     private String name;
-    private String description;
     private int image;
 
-    public ObligationItem(String name, String description, int image) {
+    public AnimalItem(String name, int image) {
         this.name = name;
-        this.description = description;
         this.image = image;
     }
 
@@ -17,14 +15,6 @@ public class ObligationItem {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public int getImage() {

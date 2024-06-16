@@ -75,7 +75,6 @@ public class ManageObligationsActivity extends AppCompatActivity implements Mana
         int accountId = SubordinateHomePageActivity.accountID;
         List<Obligation> obligationList = new ObligationDaoMemory().findAll();
         List<ObligationItem> obligationItems = new ArrayList<>();
-        System.out.println("size: "+obligationItems.size());
 
         for(Obligation obligation : obligationList){
             obligationItems.add(new ObligationItem(obligation.getAnimal().getName(),obligation.getDescription() , R.drawable.ic_obligation));

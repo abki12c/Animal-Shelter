@@ -30,15 +30,13 @@ public class ManageProfileActivity  extends AppCompatActivity implements ManageP
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_profile);
 
-        bottomNavigationView
-                = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        bottomNavigationView
-                .setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.settings);
 
-        logout = (Button) findViewById(R.id.logoutButton);
-        info = (Button) findViewById(R.id.contact_info);
+        logout = findViewById(R.id.logoutButton);
+        info = findViewById(R.id.contact_info);
 
 
     }
@@ -73,7 +71,7 @@ public class ManageProfileActivity  extends AppCompatActivity implements ManageP
     public void contactInfo(){
         Intent intent = new Intent(getApplicationContext() , ContactInfoActivity.class);
         startActivity(intent);
-
+        overridePendingTransition(0,0);
     }
 
     /**

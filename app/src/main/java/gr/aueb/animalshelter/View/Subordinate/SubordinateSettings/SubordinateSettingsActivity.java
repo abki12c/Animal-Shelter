@@ -96,7 +96,7 @@ public class SubordinateSettingsActivity extends AppCompatActivity implements Su
     public void contactInfo(){
         Intent intent = new Intent(getApplicationContext() , ContactInfoActivity.class);
         startActivity(intent);
-
+        overridePendingTransition(0,0);
     }
 
     /**
