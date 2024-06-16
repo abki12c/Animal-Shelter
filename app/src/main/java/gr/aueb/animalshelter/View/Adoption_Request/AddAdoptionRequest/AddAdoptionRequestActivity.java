@@ -45,8 +45,8 @@ public class AddAdoptionRequestActivity extends AppCompatActivity implements Add
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_adoption_request);
-        animaltypes=new ArrayList<String>();
-        animalbreeds=new ArrayList<String>();
+        animaltypes=new ArrayList<>();
+        animalbreeds=new ArrayList<>();
 
 
         bottomNavigationView = findViewById(R.id.bottomNavigationViewPet);
@@ -60,13 +60,13 @@ public class AddAdoptionRequestActivity extends AppCompatActivity implements Add
         //search bar types
 
         autoCompleteTextViewType=findViewById(R.id.auto_complete1);
-        adapterTypes=new ArrayAdapter<String>(this,R.layout.type_item,animaltypes);
+        adapterTypes=new ArrayAdapter<>(this,R.layout.type_item,animaltypes);
         autoCompleteTextViewType.setAdapter(adapterTypes);
 
         //search bar breeds
         presenter.onLoadBarBreeds();
         autoCompleteTextViewBreed=findViewById(R.id.auto_complete2);
-        adapterBreeds=new ArrayAdapter<String>(this,R.layout.type_item,animalbreeds);
+        adapterBreeds=new ArrayAdapter<>(this,R.layout.type_item,animalbreeds);
         autoCompleteTextViewBreed.setAdapter(adapterBreeds);
 
 
@@ -110,11 +110,9 @@ public class AddAdoptionRequestActivity extends AppCompatActivity implements Add
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                if(view.getId() == R.id.buttonMoreInfo) {
-                    presenter.onClickButton((Animal) parent.getItemAtPosition(position));
-                }else {
-                    presenter.onClickItem((Animal) parent.getItemAtPosition(position));
-                }
+
+                presenter.onClickItem((Animal) parent.getItemAtPosition(position));
+
             }
         });
 
@@ -167,19 +165,6 @@ public class AddAdoptionRequestActivity extends AppCompatActivity implements Add
         intent.putExtra("animal", a.getId());
         startActivity(intent);
 
-    }
-    /**
-     * Goes to the application form page
-     * to move to the next step of the adoption request
-     * process
-     * @param a the animal chosen for the adoption request
-     */
-
-    //on choose animal
-    public void enterInfo(Animal a) {
-        Intent intent = new Intent(this, AdoptionRequestInfoActivity.class);
-        intent.putExtra("animal", a.getId());
-        startActivity(intent);
     }
 
 

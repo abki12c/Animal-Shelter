@@ -38,20 +38,11 @@ public class AddAdoptionRequestPresenter {
         view.search();
     }
     /**
-     * goes to the application form
-     * to move to the next step of the adoption request
-     * process
-     * @param a the animal chosen for the adoption request
-     */
-    void onClickItem(Animal a){
-        view.enterInfo(a);
-    }
-    /**
      * Goes to Animal Details activity to display more
      * information for the chosen animal
      * @param a the animal chosen
      */
-    void onClickButton(Animal a){
+    void onClickItem(Animal a){
         view.moreInfo(a);
     }
 

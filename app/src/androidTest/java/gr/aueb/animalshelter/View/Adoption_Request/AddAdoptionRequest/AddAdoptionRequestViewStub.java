@@ -89,10 +89,7 @@ public class AddAdoptionRequestViewStub implements AddAdoptionRequestView{
 
 
 
-    @Override
-    public void enterInfo(Animal a) {
-        choose=true;
-    }
+
 
     @Override
     public void moreInfo(Animal a) {

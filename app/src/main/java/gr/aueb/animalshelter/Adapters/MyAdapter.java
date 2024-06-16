@@ -97,13 +97,8 @@ public class MyAdapter extends BaseAdapter
 
             ((TextView) convertView.findViewById(R.id.item_name)).setText(attachedAnimal.getName());
 
-            final Button buy = convertView.findViewById(R.id.buttonMoreInfo);
-            buy.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    ((GridView) parent).performItemClick(v, position, 0);
-                }
-            });
+
+
         }else{
             if (convertView == null) {
                 LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

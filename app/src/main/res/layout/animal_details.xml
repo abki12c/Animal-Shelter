@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Animals.ShowAnimals.SearchAnimalsActivity"
->
+    android:scrollbars="vertical"
+    tools:context=".View.Animals.ShowAnimals.SearchAnimalsActivity">
+
 
     <ImageView
         android:id="@+id/animalPic"
@@ -105,15 +106,13 @@
     <TextView
         android:id="@+id/description"
         android:layout_width="299dp"
-        android:layout_height="99dp"
+        android:layout_height="59dp"
         android:layout_marginVertical="10dp"
         android:layout_marginStart="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animalDescription"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintTop_toBottomOf="@+id/animalDescription" />
 
     <TextView
         android:id="@+id/gender"
@@ -135,16 +134,30 @@
         app:layout_constraintTop_toBottomOf="@+id/animalAge" />
 
     <TextView
-        android:textSize="30sp"
         android:id="@+id/animalName"
         android:layout_width="170dp"
         android:layout_height="50dp"
         android:layout_marginStart="130dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="197dp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/animalPic" />
+
+
+    <Button
+        android:id="@+id/adopt_btn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:text="adopt"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

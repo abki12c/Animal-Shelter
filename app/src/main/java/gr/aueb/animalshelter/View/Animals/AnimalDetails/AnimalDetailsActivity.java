@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,7 +19,9 @@ import gr.aueb.animalshelter.R;
 import gr.aueb.animalshelter.View.Adopter.AdopterHome.AdopterHomeActivity;
 import gr.aueb.animalshelter.View.Adopter.AdopterSettings.ManageProfileActivity;
 import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AddAdoptionRequestActivity;
+import gr.aueb.animalshelter.View.Adoption_Request.AddAdoptionRequest.AdoptionRequestInfo.AdoptionRequestInfoActivity;
 import gr.aueb.animalshelter.View.Animals.ShowAnimals.SearchAnimalsActivity;
+import gr.aueb.animalshelter.domain.Animal;
 
 
 public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalDetailsView, BottomNavigationView.OnNavigationItemSelectedListener {
@@ -26,6 +29,7 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
     final AnimalDetailsPresenter presenter = new AnimalDetailsPresenter(this,new AnimalDAOMemory());;
     BottomNavigationView bottomNavigationView;
     ImageView imageView;
+    Button adoptBtn;
     private String name,type,breed,age,gender,chipped,description;
     Button back;
     int animalId;
@@ -38,11 +42,19 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
         setContentView(R.layout.activity_animal_details);
         this.animalId = getIntent().getIntExtra("animal",0);
 
+        adoptBtn = findViewById(R.id.adopt_btn);
         imageView = findViewById(R.id.animalPic);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
         presenter.onLoadAnimal(animalId);
+
+        adoptBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onClickBtn(getIntent().getIntExtra("animal",0));
+            }
+        });
 
     }
 
@@ -191,6 +203,21 @@ public class AnimalDetailsActivity extends AppCompatActivity implements  AnimalD
         startActivity(intent);
 
     }
+
+    /**
+     * Goes to the application form page
+     * to move to the next step of the adoption request
+     * process
+     * @param animalId the id of the animal chosen for the adoption request
+     */
+
+    @Override
+    public void enterInfo(int animalId) {
+        Intent intent = new Intent(this, AdoptionRequestInfoActivity.class);
+        intent.putExtra("animal",animalId);
+        startActivity(intent);
+    }
+
     /**
      * when navigation menu on the bottom
      * of the screen is clicked and the choice is

@@ -20,16 +20,6 @@ public interface AddAdoptionRequestView {
 
     public void setLookingForType(String s);
 
-
-
-    /**
-     * Goes to AnimalRequestInfoActivity
-     * when the user clicks on an it,
-     * @param a is the animal chosen.
-     */
-
-    void enterInfo(Animal a);
-
     /**
      * Goes to AnimalDetailsActivity
      * when the user clicks on an it,

@@ -36,6 +36,16 @@ public class AnimalDetailsPresenter {
         view.setImage(attachedAnimal.getImageName());
     }
 
+    /**
+     * goes to the application form
+     * to move to the next step of the adoption request
+     * process
+     * @param id the id of the animal chosen for the adoption request
+     */
+    void onClickBtn(int id){
+        view.enterInfo(id);
+    }
+
 
 
 

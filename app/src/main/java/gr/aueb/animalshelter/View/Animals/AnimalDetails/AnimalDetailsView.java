@@ -3,6 +3,14 @@ package gr.aueb.animalshelter.View.Animals.AnimalDetails;
 public interface AnimalDetailsView {
 
     /**
+     * Goes to AnimalRequestInfoActivity
+     * when the user clicks on an it,
+     * @param a is the animal chosen.
+     */
+
+    void enterInfo(int a);
+
+    /**
      * Setters
      */
     void setName(String name);

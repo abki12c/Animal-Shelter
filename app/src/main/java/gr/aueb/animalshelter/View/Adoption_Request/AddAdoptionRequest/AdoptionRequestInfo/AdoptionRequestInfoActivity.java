@@ -42,7 +42,7 @@ public class AdoptionRequestInfoActivity extends AppCompatActivity implements Ad
 
 
 
-        submit = (Button) findViewById(R.id.buttonSubmit);
+        submit = findViewById(R.id.buttonSubmit);
 
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
