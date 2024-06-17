@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView_subordinate"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/animalPicDetails"
+                android:layout_width="340dp"
+                android:layout_height="239dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ageDetails"
+                android:layout_width="60dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/animalAgeDetails"
+                app:layout_constraintTop_toBottomOf="@+id/breedDetails" />
+
+            <TextView
+                android:id="@+id/animalAgeDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/animalAge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animalBreedDetails" />
+
+            <TextView
+                android:id="@+id/animalBreedDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/animalBreed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animalTypeDetails" />
+
+            <TextView
+                android:id="@+id/animalTypeDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/animalType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animalNameDetails" />
+
+            <TextView
+                android:id="@+id/typeDetails"
+                android:layout_width="160dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toEndOf="@+id/animalTypeDetails"
+                app:layout_constraintTop_toBottomOf="@+id/animalNameDetails" />
+
+            <TextView
+                android:id="@+id/chippedDetails"
+                android:layout_width="48dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toEndOf="@+id/animalChippedDetails"
+                app:layout_constraintTop_toBottomOf="@+id/genderDetails" />
+
+            <TextView
+                android:id="@+id/animalChippedDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/animalChipped"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animalGenderDetails" />
+
+            <TextView
+                android:id="@+id/animalDescriptionDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/animalDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animalChippedDetails" />
+
+            <TextView
+                android:id="@+id/breedDetails"
+                android:layout_width="160dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toEndOf="@+id/animalBreedDetails"
+                app:layout_constraintTop_toBottomOf="@+id/typeDetails" />
+
+            <TextView
+                android:id="@+id/descriptionDetails"
+                android:layout_width="299dp"
+                android:layout_height="59dp"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.096"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animalDescriptionDetails" />
+
+            <TextView
+                android:id="@+id/genderDetails"
+                android:layout_width="59dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toEndOf="@+id/animalGenderDetails"
+                app:layout_constraintTop_toBottomOf="@+id/ageDetails" />
+
+            <TextView
+                android:id="@+id/animalGenderDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/animalGender"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animalAgeDetails" />
+
+            <TextView
+                android:id="@+id/animalNameDetails"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="197dp"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animalPicDetails" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView_subordinate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu_subordinates"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    tools:context=".View.Animals.ShowAnimals.SearchAnimalsActivity">
+    android:scrollbars="vertical">
 
 
     <ImageView
@@ -153,7 +152,6 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
         android:text="adopt"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
